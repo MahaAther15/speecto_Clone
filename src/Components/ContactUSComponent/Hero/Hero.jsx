@@ -1,5 +1,5 @@
 import React from "react";
-import contactus from "../../../assets/asset/contact.mp4";
+import contactus from "../../../assets/asset/contactUs.mp4";
 
 const Hero = () => {
     return (
