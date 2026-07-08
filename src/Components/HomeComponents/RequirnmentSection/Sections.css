@@ -1,0 +1,263 @@
+/* =============================================
+   RequirmentAnimation - Sections.css
+   ============================================= */
+
+/* Scaler wrapper to fit animation inside its container */
+.req-animation-scaler {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scene wrapper */
+.scene-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main scene container — all assets positioned relative to this */
+.scene-container {
+  position: relative;
+  width: 420px;
+  height: 320px;
+}
+
+/* ── Assets ── */
+
+/* Generic positioned asset helper */
+.asset {
+  position: absolute;
+  object-fit: contain;
+}
+
+/* Window blind — background decoration */
+.window-blind {
+  top: 2%;
+  width: 90px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* Floating papers */
+.paper-left {
+  bottom: 20%;
+  left: -5%;
+  width: 44px;
+  z-index: 2;
+  animation: floatPaper 4s ease-in-out infinite;
+}
+
+.paper-left-top {
+  top: 10%;
+  left: 5%;
+  width: 36px;
+  z-index: 2;
+  animation: floatPaper 5s ease-in-out infinite reverse;
+}
+
+.paper-right {
+  top: 30%;
+  right: 2%;
+  width: 40px;
+  z-index: 2;
+  animation: floatPaper 4.5s ease-in-out infinite 1s;
+}
+
+@keyframes floatPaper {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-10px) rotate(4deg); }
+}
+
+/* ── Clipboard ── */
+.giant-clipboard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  z-index: 10;
+}
+
+.clipboard-clip {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  z-index: 15;
+}
+
+.clipboard-paper {
+  background: #fff;
+  border: 1.5px solid #2563EB;
+  border-radius: 8px;
+  padding: 18px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.12);
+}
+
+.placeholder-box-top,
+.placeholder-box-bottom {
+  width: 100%;
+  height: 6px;
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+/* Checklist rows */
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checklist-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #2563EB, #60a5fa);
+  border-radius: 2px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #2563EB;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #2563EB;
+  flex-shrink: 0;
+}
+
+/* ── Chat Bubbles ── */
+.chat-bubble {
+  position: absolute;
+  width: 48px;
+  z-index: 8;
+}
+
+.bubble-left {
+  top: 12%;
+  left: 4%;
+  animation: bubblePop 3s ease-in-out infinite;
+}
+
+.bubble-right {
+  top: 8%;
+  right: 8%;
+  animation: bubblePop 3.5s ease-in-out infinite 0.8s;
+}
+
+@keyframes bubblePop {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50%       { transform: scale(1.08) translateY(-6px); }
+}
+
+/* ── CSS Clock ── */
+.css-clock-s,
+.css-clock {
+  position: absolute;
+  top: -8%;
+  right: 12%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid #2563EB;
+  background: #fff;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.18);
+}
+
+@media (min-width: 1024px) {
+  .css-clock-s {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* Clock hands */
+.clock-hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 4px;
+  background: #2563EB;
+}
+
+.clock-hand.hour {
+  width: 3px;
+  height: 30%;
+  margin-left: -1.5px;
+  animation: rotateHour 43200s linear infinite;
+}
+
+.clock-hand.minute {
+  width: 2px;
+  height: 40%;
+  margin-left: -1px;
+  background: #60a5fa;
+  animation: rotateMinute 3600s linear infinite;
+}
+
+@keyframes rotateHour   { from { transform: rotate(0deg);   } to { transform: rotate(360deg);   } }
+@keyframes rotateMinute { from { transform: rotate(0deg);   } to { transform: rotate(360deg);   } }
+
+/* ── Standing figures ── */
+.woman-standing {
+  bottom: 0;
+  z-index: 20;
+}
+
+/* ── Plant ── */
+.plant1 {
+  bottom: 0;
+  left: -2%;
+  width: 40px;
+  z-index: 5;
+}
+
+/* ── Floor lines ── */
+.floor-lines {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.floor-line {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.floor-line.main {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #2563EB 30%, #60a5fa 70%, transparent);
+  margin-bottom: 4px;
+}
+
+.floor-line.shadow {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(37,99,235,0.25) 30%, rgba(96,165,250,0.25) 70%, transparent);
+}

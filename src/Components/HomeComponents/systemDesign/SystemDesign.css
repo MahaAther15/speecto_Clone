@@ -1,0 +1,23 @@
+.timeline-lineHeader3 {
+  width: 2px;
+  height: 70px;
+  background: linear-gradient(180deg, transparent, #554bac);
+}
+
+.timeline-line3 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 607px;
+  background: linear-gradient(180deg, transparent 0%, #554bac 23.7%, #8c99e3 100%);
+}
+
+.timeline-line3-1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 455px;
+  background: linear-gradient(180deg, transparent 0%, #554bac 35.1%, #8c99e3 100%);
+}

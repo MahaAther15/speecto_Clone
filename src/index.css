@@ -1,0 +1,1162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/lemon-milk');
+@import "tailwindcss";
+
+@theme {
+  --font-Nunito: "Nunito", sans-serif;
+  --font-Lemon: "Lemon Milk", sans-serif;
+
+  --color-white1: #ffffff;
+  --color-gray5: #6a6a6a;
+  --color-gray6: #374151;
+  --color-gray7: #f3f4f6;
+  --color-darkBg: #000a14;
+  --color-lightBg: #081533;
+  --color-primary: #212529;
+  --color-gray2: #6C757D;
+  --color-primary1: #005DFC;
+  --color-primary2: #005DFC;
+
+  --shadow-serviceCardShadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================
+   Container Utility
+   ============================================= */
+@utility container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* =============================================
+   Hero Gradient Classes (used in CONTENT_VARIATIONS)
+   ============================================= */
+.bg-orangeGradientDark {
+  background-image: linear-gradient(90deg, #eb4215, #fb896c);
+}
+
+@utility bg-developmentBoxGradient {
+  background: linear-gradient(135deg, #eb4215, #fb896c);
+}
+
+@utility bg-developmentVerticleLineGradient {
+  background: linear-gradient(180deg, #eb4215, #fb896c);
+}
+
+.bg-productDesignTextGradient {
+  background-image: linear-gradient(90deg, #eb15a2, #ff74e0);
+}
+
+.bg-purpleGradient1Dark {
+  background-image: linear-gradient(135deg, #3f2b96, #a8c0ff);
+}
+
+.bg-automatedWindowGrad {
+  background-image: linear-gradient(180deg, #ff416c, #ff4b2b);
+}
+
+/* =============================================
+   Requirement Section - Blue Gradient Utilities
+   Registered as @utility so dark: variant works
+   ============================================= */
+@utility bg-blueGradientBox {
+  background: linear-gradient(135deg, #005DFC, #00c6ff);
+}
+
+@utility bg-blueGradientBoxDark {
+  background: linear-gradient(135deg, #1e40af, #3b82f6, #06b6d4);
+}
+
+@utility bg-blueGradientText {
+  background-image: linear-gradient(90deg, #005DFC, #00c6ff);
+}
+
+@utility bg-blueGradientTextDark {
+  background-image: linear-gradient(90deg, #3b82f6, #06b6d4);
+}
+
+@utility bg-requirementBlueLineGradient {
+  background: linear-gradient(90deg, #005DFC, #00c6ff);
+}
+
+@utility bg-requirementBlueLineGradientDark {
+  background: linear-gradient(135deg, #01358F 0%, #005DFC 50%, #0178b2 100%);
+}
+
+@utility bg-blueGradientLine {
+  background: linear-gradient(180deg, #005DFC, #00c6ff);
+}
+
+@utility bg-blueGradientLineDark {
+  background: linear-gradient(180deg, #3b82f6, #06b6d4);
+}
+
+@utility bg-buttonborderGradient {
+  background: linear-gradient(90deg, #005DFC, #00c6ff);
+}
+
+@utility bg-lazyLoadBg {
+  background-color: #1e293b;
+}
+
+/* =============================================
+   Cloud Keyframes and Animations
+   ============================================= */
+@keyframes move-cloud-bottom {
+  0% {
+    transform: translateX(-24px);
+  }
+
+  100% {
+    transform: translateX(35px);
+  }
+}
+
+@keyframes move-cloud-top {
+  0% {
+    transform: translateX(-25px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(5px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(35px);
+    opacity: 0;
+  }
+}
+
+.animate-cloud-bottom {
+  animation: move-cloud-bottom 4s ease-in-out infinite alternate;
+}
+
+.animate-cloud-top {
+  animation: move-cloud-top 4s linear infinite;
+}
+
+/* =============================================
+   Custom Hero Styles and Animations
+   ============================================= */
+.hero-wrapper {
+  background: #081533;
+  color: white;
+}
+
+.bg-watermark-text {
+  position: absolute;
+  top: 18%;
+  left: 2%;
+  font-size: clamp(8rem, 18vw, 20rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.015);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.btn-get-started {
+  border: 1.5px solid transparent;
+  background: var(--btn-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.btn-get-started::after {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 11.5px;
+  padding: 1.5px;
+  background: var(--btn-gradient);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.btn-get-started::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 11.5px;
+  background: var(--btn-gradient);
+  z-index: -2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.btn-get-started:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-get-started:hover {
+  -webkit-text-fill-color: white;
+}
+
+.btn-learn-more {
+  background: transparent;
+  border: none;
+  color: white;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-learn-more:hover {
+  color: var(--btn-color);
+}
+
+.btn-learn-more:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+.arrow-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.cursor {
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float-delayed {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+/* =============================================
+   Animated Clock Widget
+   ============================================= */
+.clock {
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hours-container,
+.minutes-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hours-container {
+  animation: rotate 43200s linear infinite;
+}
+
+.minutes-container {
+  animation: rotate 3600s linear infinite;
+}
+
+.seconds-container {
+  animation: rotate 60s linear infinite;
+}
+
+.hours,
+.minutes,
+.seconds {
+  position: absolute;
+  background: #333;
+  border-radius: 2px;
+  transform-origin: bottom center;
+  bottom: 50%;
+}
+
+.hours {
+  width: 2px;
+  height: 28%;
+}
+
+.minutes {
+  width: 1.5px;
+  height: 38%;
+}
+
+.seconds {
+  width: 1px;
+  height: 44%;
+  background: #ff4a32;
+}
+
+/* Dark mode clock hands */
+.dark .hours {
+  background: #fff;
+}
+
+.dark .minutes {
+  background: #fff;
+}
+
+.dark .seconds {
+  background: #ff4a32;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =============================================
+   Requirement Timeline Styles
+   ============================================= */
+
+/* Filled blue circle with border */
+.activeTimelineBorder {
+  border: 2px solid #2563EB;
+  background: #2563EB;
+}
+
+/* Solid blue connector line for each step */
+.requirementTimeLine::after {
+  background: #2563EB !important;
+}
+
+/* Faded (transparent → blue) line for the very first (placeholder) item */
+.fadeInTimeLine::after {
+  background: linear-gradient(180deg, transparent 0%, #2563EB 100%) !important;
+}
+
+/* Grey before-line is hidden — clear the default */
+.requirementTimeLine::before {
+  background: transparent;
+}
+
+/* =============================================
+   System Design Timeline Styles
+   ============================================= */
+
+/* Purple filled circle dot */
+.systemDesignCircle {
+  border: 2px solid #7c3aed;
+  background: linear-gradient(135deg, #3f2b96, #a8c0ff);
+}
+
+/* Purple solid connector line between steps */
+.systemDesign::after {
+  background: linear-gradient(180deg, #3f2b96, #a8c0ff) !important;
+}
+
+/* Fade-in purple line for the first placeholder item */
+.fadeInSystemLine::after {
+  background: linear-gradient(180deg, transparent 0%, #3f2b96 100%) !important;
+}
+
+/* Grey before-line hidden */
+.systemDesign::before {
+  background: transparent;
+}
+
+
+
+/* animate-width-full2 */
+@keyframes width-full2 {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-width-full2 {
+  animation: width-full2 2s ease-in-out infinite alternate;
+}
+
+/* animate-windowwave1 */
+@keyframes windowwave1 {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-windowwave1 {
+  animation: windowwave1 3s ease-in-out infinite;
+}
+
+/* =============================================
+   Product Design Section - Gradients & Styles
+   ============================================= */
+
+@utility bg-productDesignVerticleLineGradient {
+  background: linear-gradient(180deg, rgba(235, 21, 162, 0), #eb15a2 97.4%);
+}
+
+@utility bg-productDesignBoxGradient {
+  background: linear-gradient(135deg, #eb15a2, #ff74e0);
+}
+
+@utility bg-productDesignTextGradient {
+  background-image: linear-gradient(90deg, #eb15a2, #ff74e0);
+}
+
+/* Product Design timeline connector */
+.productDesigns::after {
+  background: linear-gradient(180deg, #eb15a2, #ff74e0) !important;
+}
+
+.productDesigns::before {
+  background: transparent;
+}
+
+/* =============================================
+   Shared Animation Utilities
+   ============================================= */
+
+/* animate-width-full (single, no "2") */
+@keyframes width-full {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-width-full {
+  animation: width-full 2s ease-in-out infinite alternate;
+}
+
+/* animate-ups-Down (gentle float) */
+@keyframes ups-down {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-ups-Down {
+  animation: ups-down 3s ease-in-out infinite;
+}
+
+/* spin (clockwise) */
+@keyframes spin-cw {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  transform-origin: center center;
+  display: block;
+  animation: spin-cw 8s linear infinite;
+}
+
+/* spin-back (counter-clockwise) */
+@keyframes spin-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.spin-back {
+  transform-origin: center center;
+  display: block;
+  animation: spin-ccw 6s linear infinite;
+}
+
+/* animate-hide-seek (fade in/out) */
+@keyframes hide-seek {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-hide-seek {
+  animation: hide-seek 3s ease-in-out infinite;
+}
+
+/* =============================================
+   Product Design Timeline Circle & Fade Line
+   ============================================= */
+
+/* Filled pink circle dot for Product Design timeline */
+.productDesignCircle {
+  background: linear-gradient(135deg, #eb15a2, #ff74e0);
+  border: 2px solid #eb15a2;
+}
+
+/* Fade-in line: transparent → pink (first/placeholder row) */
+.fadeInProductLine::after {
+  background: linear-gradient(180deg, transparent 0%, #eb15a2 100%) !important;
+}
+
+/* =============================================
+   System Design Section - Gradients & Styles
+   ============================================= */
+
+@utility bg-systemDesignVerticleLineGradient {
+  background: linear-gradient(180deg, #3f2b96, #a8c0ff);
+}
+
+/* System Design timeline connector */
+.systemDesign::after {
+  background: linear-gradient(180deg, #3f2b96, #a8c0ff) !important;
+}
+
+.systemDesign::before {
+  background: transparent;
+}
+
+.bg-purpleGradient1 {
+  background-image: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* Filled purple circle dot for System Design timeline */
+.systemDesignCircle {
+  background: #3f2b96;
+  border: 2px solid #3f2b96;
+}
+
+/* Fade-in line: transparent → purple */
+.fadeInSystemLine::after {
+  background: linear-gradient(180deg, transparent 0%, #3f2b96 100%) !important;
+}
+
+
+
+.bg-developmentVerticleLineGradient {
+  background-image: linear-gradient(180deg, hsla(12, 95%, 70%, 0), #eb4215 97.4%);
+}
+
+/* =============================================
+   Development Section - Gradients & Styles
+   ============================================= */
+
+/* Scope timeline styles to .developmentDesign to preserve original HTML class names */
+.developmentDesign .activeTimelineBorder {
+  border: 2px solid #2563EB !important;
+  background: #2563EB !important;
+}
+
+.developmentDesign .development::after {
+  background: linear-gradient(180deg, #eb4215, #fb896c) !important;
+}
+
+.developmentDesign .development::before {
+  background: transparent !important;
+}
+
+.developmentDesign [class*="after:bg-developmentVerticleLineGradient"]::after,
+.developmentDesign [class*="dark:after:bg-developmentVerticleLineGradient"]::after {
+  background: linear-gradient(180deg, hsla(12, 95%, 70%, 0), #eb4215 97.4%) !important;
+}
+
+/* Scope timeline styles to .developmentSectionDesign to set Development section circles to orange/coral */
+.developmentSectionDesign .activeTimelineBorder {
+  border: 2px solid #eb4215 !important;
+  background: #eb4215 !important;
+}
+
+.developmentSectionDesign .development::after {
+  background: linear-gradient(180deg, #eb4215, #fb896c) !important;
+}
+
+.developmentSectionDesign .development::before {
+  background: transparent !important;
+}
+
+.developmentSectionDesign [class*="after:bg-developmentVerticleLineGradient"]::after,
+.developmentSectionDesign [class*="dark:after:bg-developmentVerticleLineGradient"]::after {
+  background: linear-gradient(180deg, hsla(12, 95%, 70%, 0), #eb4215 97.4%) !important;
+}
+
+/* Scope timeline styles to .systemDesignSectionDesign to set System Design section circles and lines to purple/violet */
+.systemDesignSectionDesign .activeTimelineBorder {
+  border: 2px solid #554bac !important;
+  background: #554bac !important;
+}
+
+.systemDesignSectionDesign [class*="after:bg-systemDesignVerticleLineGradient"]::after,
+.systemDesignSectionDesign [class*="dark:after:bg-systemDesignVerticleLineGradient"]::after {
+  background: linear-gradient(180deg, #554bac, #8c99e3) !important;
+}
+
+/* =============================================
+   Testing Section - Gradients & Styles
+   ============================================= */
+
+.bg-testingDesignTextGradient {
+  background-image: linear-gradient(90deg, #52ad27, #84d95b);
+}
+
+@utility bg-testingDesignVerticleLineGradient {
+  background-image: linear-gradient(180deg, rgba(82, 173, 39, 0), #52ad27 97.4%);
+}
+
+@utility bg-testingDesignBoxGradient {
+  background: linear-gradient(135deg, #52ad27, #84d95b);
+}
+
+@utility bg-testingDesignTextGradient {
+  background-image: linear-gradient(90deg, #52ad27, #84d95b);
+}
+
+.testingDesign .activeTimelineBorder {
+  border: 2px solid #52ad27 !important;
+  background: #52ad27 !important;
+}
+
+.testingDesign .testing::after {
+  background: linear-gradient(180deg, #52ad27, #84d95b) !important;
+}
+
+.testingDesign .testing::before {
+  background: transparent !important;
+}
+
+.testingDesign [class*="after:bg-testingDesignVerticleLineGradient"]::after,
+.testingDesign [class*="dark:after:bg-testingDesignVerticleLineGradient"]::after {
+  background: linear-gradient(180deg, hsla(95, 60%, 40%, 0), #52ad27 97.4%) !important;
+}
+
+@keyframes windowWave2 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-windowWave2 {
+  animation: windowWave2 4s ease-in-out infinite;
+}
+
+/* =============================================
+   Production Section - Gradients & Styles
+   ============================================= */
+
+@utility bg-greenGradientBox {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+@utility bg-greenGradientBoxDark {
+  background: linear-gradient(135deg, #0e8076, #2ebd62);
+}
+
+@utility bg-greenGradientText {
+  background-image: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+@utility bg-greenGradientTextDark {
+  background-image: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+@utility bg-greenGradientLine {
+  background: linear-gradient(180deg, rgba(17, 153, 142, 0), #11998e 97.4%);
+}
+
+@utility bg-greenGradientLineDark {
+  background: linear-gradient(180deg, rgba(14, 128, 118, 0), #0e8076 97.4%);
+}
+
+@utility bg-developmentScreenGrad {
+  background-image: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+/* =============================================
+   Production Section - Mountain Slide Animation
+   ============================================= */
+
+@keyframes mountain-slide {
+  0% {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+}
+
+.production-mountain-slide {
+  animation: mountain-slide 3.5s ease-in-out infinite;
+}
+
+.production-mountain-slide-delay {
+  animation-delay: 0.6s;
+}
+
+.production-mountain-slide-delay2 {
+  animation-delay: 1.2s;
+}
+
+.production-mountain-slide-delay3 {
+  animation-delay: 1.8s;
+}
+
+/* Production Line - Dot + Fill Animation */
+
+/* The parent line container must be relative for children to position */
+.production-line-animated {
+  position: relative;
+  overflow: visible;
+}
+
+/* Dot: appears at the far end of the line, pulses then fades */
+.production-line-dot {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #11998e;
+  box-shadow: 0 0 6px 2px rgba(17, 153, 142, 0.7);
+  animation: production-dot-pulse 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes production-dot-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+/* Fill: a solid green line that grows from top (0%) to full height, then shrinks back */
+.production-line-fill {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 2px;
+  height: 0%;
+  background: linear-gradient(180deg, #11998e, #38ef7d);
+  border-radius: 2px;
+  animation: production-line-grow 3s ease-in-out infinite;
+  z-index: 5;
+}
+
+@keyframes production-line-grow {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    height: 100%;
+    opacity: 1;
+  }
+  85% {
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    height: 0%;
+    opacity: 0;
+  }
+}
+
+/* =============================================
+   Automated Deployment Section - Gradients & Styles
+   ============================================= */
+
+@utility bg-purpleGradient {
+  background: linear-gradient(180deg, rgba(63, 43, 150, 0), #3f2b96 97.4%);
+}
+
+@utility bg-purpleGradientDark {
+  background: linear-gradient(180deg, rgba(63, 43, 150, 0), #3f2b96 97.4%);
+}
+
+@utility bg-purpleGradient1 {
+  background: linear-gradient(135deg, #3f2b96, #a8c0ff);
+}
+
+@utility bg-purpleGradient1Dark {
+  background: linear-gradient(135deg, #3f2b96, #a8c0ff);
+}
+
+@utility bg-purpleGradientText {
+  background-image: linear-gradient(90deg, #3f2b96, #a8c0ff);
+}
+
+@utility bg-purpleGradientTextDark {
+  background-image: linear-gradient(90deg, #3f2b96, #a8c0ff);
+}
+
+.bg-automatedWindowGrad {
+  background-image: linear-gradient(180deg, #ff416c, #ff4b2b);
+}
+
+/* Automated Deployment Animations */
+@keyframes pipe-top-desktop {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  35% {
+    transform: translate(26px, 0px);
+  }
+
+  70% {
+    transform: translate(26px, -50px);
+  }
+
+  100% {
+    transform: translate(56px, -50px);
+  }
+}
+
+@keyframes pipe-top-tablet {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  35% {
+    transform: translate(26px, 0px);
+  }
+
+  70% {
+    transform: translate(26px, -35px);
+  }
+
+  100% {
+    transform: translate(56px, -35px);
+  }
+}
+
+@keyframes pipe-top-mobile {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  35% {
+    transform: translate(26px, 0px);
+  }
+
+  70% {
+    transform: translate(26px, -5px);
+  }
+
+  100% {
+    transform: translate(56px, -5px);
+  }
+}
+
+.animate-automatedExample {
+  animation: pipe-top-desktop 3s linear infinite;
+}
+
+.animate-automatedExample1 {
+  animation: pipe-top-tablet 3s linear infinite;
+}
+
+.animate-automatedExample2 {
+  animation: pipe-top-mobile 3s linear infinite;
+}
+
+@keyframes pipe-bottom-desktop {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  35% {
+    transform: translate(14px, 0px);
+  }
+
+  70% {
+    transform: translate(14px, 50px);
+  }
+
+  100% {
+    transform: translate(39px, 50px);
+  }
+}
+
+@keyframes pipe-bottom-tablet {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  35% {
+    transform: translate(14px, 0px);
+  }
+
+  70% {
+    transform: translate(14px, 35px);
+  }
+
+  100% {
+    transform: translate(39px, 35px);
+  }
+}
+
+@keyframes pipe-bottom-mobile {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  35% {
+    transform: translate(14px, 0px);
+  }
+
+  70% {
+    transform: translate(14px, 20px);
+  }
+
+  100% {
+    transform: translate(39px, 20px);
+  }
+}
+
+.animate-automatedExample21 {
+  animation: pipe-bottom-desktop 3s linear infinite;
+}
+
+.animate-automatedExample22 {
+  animation: pipe-bottom-tablet 3s linear infinite;
+}
+
+.animate-automatedExample23 {
+  animation: pipe-bottom-mobile 3s linear infinite;
+}
+
+@keyframes histogram-steps {
+  0% {
+    transform: scaleY(0.1);
+  }
+
+  45% {
+    transform: scaleY(1);
+  }
+
+  55% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0.1);
+  }
+}
+
+.animate-height {
+  transform-origin: bottom center;
+  animation: histogram-steps 4s steps(10, end) infinite;
+}
+
+/* =============================================
+   Our Team Section - Card Overlay Styles
+   ============================================= */
+.team-card-overlay {
+  clip-path: polygon(0px 80%, 100% 59%, 100% 100%, 0% 100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.group:hover .team-card-overlay {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  background-image: linear-gradient(90deg, #005DFC, #00c6ff) !important;
+  background-color: transparent !important;
+  opacity: 0.9 !important;
+}
+
+/* =============================================
+   Contact Us Section - Gradients & Styles
+   ============================================= */
+
+.bg-buttontextGradient {
+  background-image: linear-gradient(90deg, #005DFC, #00c6ff);
+}

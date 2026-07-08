@@ -1,0 +1,452 @@
+.bg-watermark-text {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+
+  font-size: clamp(8rem, 20vw, 18rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+
+  color: rgba(255, 255, 255, 0.03);
+
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+
+  white-space: nowrap;
+}
+@media (max-width: 1024px) {
+  .bg-watermark-text {
+    font-size: 12rem;
+    top: 12%;
+  }
+}
+
+@media (max-width: 640px) {
+  .bg-watermark-text {
+    font-size: 8rem;
+    top: 10%;
+  }
+}
+
+/* Button & Hover Effects */
+
+.btn-learn-more {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-learn-more:hover {
+  color: var(--btn-color);
+  transform: translateY(-1px);
+}
+
+.btn-learn-more:hover .arrow-icon {
+  transform: translateX(6px);
+}
+
+.arrow-icon {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
+}
+
+/* --- Standing Animation & Keyframe Definitions --- */
+
+/* Slow spin for back circle */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+.animate-spin-slow-reverse {
+  animation: spin-reverse 40s linear infinite;
+}
+
+/* Reverse spin for middle circle */
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.animate-spin-reverse {
+  animation: spin-reverse 30s linear infinite;
+}
+
+/* Breath animation for the character */
+@keyframes breath {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.008);
+  }
+}
+.animate-breath {
+  animation: breath 6s ease-in-out infinite;
+}
+
+/* Glow pulse for screen text/code */
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.75;
+    filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.8));
+  }
+}
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Subtle opacity pulsing */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+/* Float animations at different speeds and offsets */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(3deg);
+  }
+}
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-4deg);
+  }
+}
+.animate-float-medium {
+  animation: float-medium 5.5s ease-in-out infinite;
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+.animate-float-fast {
+  animation: float-fast 4s ease-in-out infinite;
+}
+
+/* =============================================
+   Original Speecto Hero skew laptop animations
+   ============================================= */
+
+@keyframes skewAnimatio {
+  0% { transform: rotateX(-25deg) rotateY(-40deg) rotateX(-43deg) translate3d(10%, 0, 50px) skew(0deg, 0deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg) rotateX(0deg) translate3d(10%, 0, 0) skew(0deg, 0deg); }
+}
+
+@keyframes skewAnimatioSmall {
+  0% { transform: rotateX(-25deg) rotateY(-40deg) rotateX(-35deg) translate3d(15%, 0, 35px) skew(0deg, 0deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg) rotateX(0deg) translate3d(15%, 0, 0) skew(0deg, 0deg); }
+}
+
+@keyframes skewAnimatioForBanner {
+  0% { transform: rotateX(-25deg) rotateY(-40deg) rotateX(-35deg) translate3d(10%, 0, 20px) skew(0deg, 0deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg) rotateX(0deg) translate3d(10%, 0, 0) skew(0deg, 0deg); }
+}
+
+@keyframes bounce1 {
+  0% { transform: translateY(-25%); animation-timing-function: cubic-bezier(.8, 0, 1, 1); }
+  100% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, .2, 1); }
+}
+
+@keyframes wiggle {
+  0% { scale: 0; opacity: 0; }
+  100% { opacity: 1; scale: 1; }
+}
+
+@keyframes wiggle2 {
+  0% { scale: 0; transform: translateX(120%); opacity: 0; }
+  100% { opacity: 1; transform: translateX(0); scale: .8; }
+}
+
+@keyframes wiggle21 {
+  0% { scale: .6; opacity: 0; }
+  50% { opacity: 1; scale: 1.03; }
+  100% { opacity: 1; scale: 1; }
+}
+
+@keyframes wiggle22 {
+  0% { scale: .6; opacity: 0; }
+  50% { opacity: 1; scale: 1.03; }
+  100% { opacity: 1; scale: 1; }
+}
+
+@keyframes wiggle23 {
+  0% { scale: .6; opacity: 0; }
+  50% { opacity: 1; scale: 1.03; }
+  100% { opacity: 1; scale: 1; }
+}
+
+@keyframes wiggle24 {
+  0% { scale: .6; opacity: 0; }
+  50% { opacity: 1; scale: 1.03; }
+  100% { opacity: 1; scale: 1; }
+}
+
+@keyframes wiggle25 {
+  0% { scale: .6; opacity: 0; }
+  50% { opacity: 1; scale: 1.03; }
+  100% { opacity: 1; scale: 1; }
+}
+
+@keyframes wiggle3 {
+  0% { scale: 0; transform: translateX(120%); opacity: 0; }
+  100% { opacity: 1; transform: translateX(0); scale: .8; }
+}
+
+@keyframes wiggle33 {
+  0% { scale: .9; }
+  100% { scale: 1; }
+}
+
+@keyframes wiggle4 {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes wiggle44 {
+  0% { scale: 1; }
+  100% { scale: .9; }
+}
+
+@keyframes shadow {
+  0% { transform: translateY(95%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes filter {
+  0% { filter: invert(0) sepia(0) saturate(7500%) hue-rotate(75deg) brightness(0) contrast(109%); }
+  80% { filter: none; }
+}
+
+@keyframes filterkeybord {
+  0% { filter: invert(100%) sepia(200%) saturate(0) hue-rotate(0deg) brightness(100%) contrast(100%); }
+  80% { filter: none; }
+}
+
+@keyframes search2 {
+  0% { transform: translate(0); }
+  50% { transform: translate(-5px); }
+  75% { transform: translate(5px); }
+  100% { transform: translate(0); }
+}
+
+.animate-bounce1 { animation: bounce1 2s ease-in-out infinite alternate; }
+.animate-filter { animation: filter 3s linear 1s forwards; }
+.animate-filterkeybord { animation: filterkeybord 1s ease-in-out infinite alternate; }
+.animate-search2 { animation: search2 3s linear infinite; }
+.animate-shadow { animation: shadow 1s linear 0s infinite alternate; }
+.animate-skewAnimatioSmall { animation: skewAnimatioSmall 2s linear 1s forwards; }
+.animate-skewAnimatio { animation: skewAnimatio 2s linear 1s forwards; }
+.animate-skewAnimatioForBanner { animation: skewAnimatioForBanner 2s linear 1s forwards; }
+.animate-wiggle { animation: wiggle 2s ease-in-out infinite alternate; }
+.animate-wiggle2 { animation: wiggle2 2.5s linear 3s forwards; }
+.animate-wiggle21 { animation: wiggle21 .4s linear forwards; }
+.animate-wiggle22 { animation: wiggle22 .4s linear forwards; }
+.animate-wiggle23 { animation: wiggle23 .4s linear forwards; }
+.animate-wiggle24 { animation: wiggle24 .4s linear forwards; }
+.animate-wiggle25 { animation: wiggle25 .4s linear forwards; }
+.animate-wiggle3 { animation: wiggle3 2.5s linear 3 forwards; }
+.animate-wiggle33 { animation: wiggle33 2.5s linear 3s infinite alternate; }
+.animate-wiggle4 { animation: wiggle4 2.5s linear 4s infinite alternate; }
+.animate-wiggle44 { animation: wiggle44 2.5s linear 3s infinite alternate; }
+
+/* Fade In wrapper for active hero animations */
+.animate-hero-fade-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-animation-container {
+  opacity: 0;
+  animation: orbitActiveAnimation var(--slide-duration, 4s) cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes orbitActiveAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  15% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.buttonBorderGradient:before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* =============================================
+   Contact Us Animation Styles & Clock Keyframes
+   ============================================= */
+.clock {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hours-container,
+.minutes-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hours {
+  position: absolute;
+  width: 6%;
+  height: 25%;
+  left: 47%;
+  top: 25%;
+  transform-origin: 50% 100%;
+  animation: rotateClock 43200s linear infinite;
+  border-radius: 4px;
+}
+
+.minutes {
+  position: absolute;
+  width: 4%;
+  height: 35%;
+  left: 48%;
+  top: 15%;
+  transform-origin: 50% 100%;
+  animation: rotateClock 3600s linear infinite;
+  border-radius: 4px;
+}
+
+.seconds {
+  position: absolute;
+  width: 2%;
+  height: 40%;
+  left: 49%;
+  top: 10%;
+  transform-origin: 50% 100%;
+  animation: rotateClock 60s linear infinite;
+  border-radius: 4px;
+}
+
+@keyframes rotateClock {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blurScreen1 {
+  0% {
+    filter: blur(0px);
+  }
+  50% {
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes search1 {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(12px, -8px) rotate(2deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+@keyframes width-full2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-blurScreen1 {
+  animation: blurScreen1 6s ease-in-out infinite;
+}
+
+.animate-search1 {
+  animation: search1 5s ease-in-out infinite;
+}
+
+.animate-width-full2 {
+  animation: width-full2 2.5s ease-in-out infinite;
+}
+
