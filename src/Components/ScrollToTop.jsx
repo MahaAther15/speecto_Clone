@@ -6,6 +6,12 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    if (document.documentElement) {
+      document.documentElement.scrollTo(0, 0)
+    }
+    if (document.body) {
+      document.body.scrollTo(0, 0)
+    }
   }, [pathname])
 
   return null
