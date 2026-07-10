@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd speecto && npm install && npm run build",
+  "outputDirectory": "speecto/dist"
+}

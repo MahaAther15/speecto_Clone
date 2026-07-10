@@ -11,11 +11,13 @@ import MVP from './pages/services/MVP'
 import About from './pages/about/About'
 import OurTeam from './pages/Team/OurTeam'
 import Contact from './pages/Contact/Contact'
+import ScrollToTop from './Components/ScrollToTop'
 import './App.css'
 
 function App() {
   return (
     <Router basename="/speecto_Clone">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
