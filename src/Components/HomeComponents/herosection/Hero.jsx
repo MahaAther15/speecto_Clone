@@ -155,13 +155,12 @@ function Hero() {
                 {/* Spacer for navbar */}
                 <div className="min-h-[80px] w-full"></div>
 
-                {/* Two-column grid: text left, animation right */}
-                <div className="relative items-center justify-center gap-y-0 grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[58%_42%] 2xl:grid-cols-[60%_35%] gap-x-[1%] sm:gap-x-[4%] h-max pt-2 pb-3 sm:pb-0 min-h-[calc(100vh-80px)]">
+                {/* Grid layout matching original speecto.com structure */}
+                <div className="relative items-center justify-center gap-y-0 grid grid-cols-1 2xl:grid-cols-[60%_35%] md:grid-cols-[55%_40%] gap-x-[1%] sm:gap-x-[5.27%] h-max pt-2 pb-3 sm:pb-0 min-h-[calc(100vh-80px)] 2xl:max-h-screen 2xl:min-h-[calc(100vh-80px)]">
 
-                    {/* Left Column: Heading + Description + Buttons */}
-                    <div className="flex flex-col justify-center gap-6 lg:gap-8 z-10 w-full">
-                        {/* Heading */}
-                        <h1 className="2xl:text-4xl lg:text-3xl sm:text-2xl text-lg text-primary font-bold font-Nunito md:!text-left !font-Lemon !font-normal !text-center !text-white1 2xl:!text-5xl lg:!text-4xl sm:!text-3xl uppercase leading-tight">
+                    {/* Row 1: Heading */}
+                    <div className="md:col-start-1 row-start-1 self-end">
+                        <h1 className="2xl:text-4xl lg:text-3xl sm:text-2xl text-lg text-primary font-bold font-Nunito md:!text-left !font-Lemon !font-normal !text-center !text-white1 2xl:!text-5xl lg:!text-4xl sm:!text-3xl uppercase">
                             <div>
                                 {currentContent.prefix}
                                 <span className={`!text-transparent !bg-clip-text ${currentContent.gradientClass}`}>
@@ -169,70 +168,78 @@ function Hero() {
                                 </span>
                                 {currentContent.suffix}
                             </div>
-                            <div className={`uppercase md:block hidden !text-transparent !bg-clip-text mt-[10px] mb-[10px] ${currentContent.gradientClass}`}>
+                            <div className={`uppercase md:block hidden !text-transparent !bg-clip-text mb-[10px] ${currentContent.gradientClass}`}>
                                 <div className="react-reveal" style={{ opacity: 1 }}>
                                     <div className="Typewriter" data-testid="typewriter-wrapper">
                                         <span className="Typewriter__wrapper">{typedText}</span>
-                                        <span className="Typewriter__cursor" style={{ visibility: "hidden" }}>|</span>
+                                        <span className="Typewriter__cursor">|</span>
                                     </div>
                                 </div>
                             </div>
                         </h1>
+                    </div>
 
-                        {/* Description + buttons */}
-                        <div className="flex flex-col md:items-start items-center">
-                            <p className="font-Nunito 2xl:text-xl xl:text-lg text-base font-medium md:!text-left !text-center !font-bold text-gray2 2xl:mb-[40px] mb-5 md:mb-8 line-clamp-3 md:line-clamp-none">
-                                We are a team of tech enthusiasts dedicated to developing world-class
-                                custom software solutions while fostering a culture of creativity,
-                                inclusivity, and continuous learning.
-                            </p>
+                    {/* Row 2 (mobile row 3): Description + Buttons */}
+                    <div className="md:col-start-1 row-start-3 md:row-start-2 flex flex-col md:items-start items-center self-start">
+                        <p className="font-Nunito 2xl:text-xl xl:text-lg text-base font-medium md:!text-left !text-center !font-bold text-gray2 2xl:mb-[50px] mb-5 md:mb-10 line-clamp-3 md:line-clamp-none">
+                            We are a team of tech enthusiasts dedicated to developing world-class
+                            custom software solutions while fostering a culture of creativity,
+                            inclusivity, and continuous learning.
+                        </p>
 
-                            <div className="flex mb-5 w-full flex-col items-center gap-8 md:flex-row">
-                                <button
-                                    onMouseEnter={() => setIsButtonHovered(true)}
-                                    onMouseLeave={() => setIsButtonHovered(false)}
-                                    className="relative group w-full py-[11px] px-[25px] font-bold rounded-[10px] sm:w-[70%] md:w-max transition-all duration-300 border-[1.5px] border-transparent cursor-pointer"
+                        <div className="flex mb-5 w-full flex-col items-center gap-8 md:flex-row">
+                            <button
+                                name="button"
+                                onMouseEnter={() => setIsButtonHovered(true)}
+                                onMouseLeave={() => setIsButtonHovered(false)}
+                                className="relative group w-full h-full py-[11px] overflow-hidden px-[25px] gap-x-[18px] p-[1.5px] font-bold !rounded-[10px] relative w-full capitalize sm:w-[70%] md:w-max cursor-pointer"
+                                style={{
+                                    boxShadow: `${currentContent.glowColor} 0px 0px 50px 0px`,
+                                    backgroundImage: isButtonHovered
+                                        ? currentContent.gradientBg
+                                        : `linear-gradient(#081533, #081533), ${currentContent.gradientBg}`,
+                                    backgroundOrigin: "border-box",
+                                    backgroundClip: "padding-box, border-box",
+                                    border: "1.5px solid transparent",
+                                }}
+                            >
+                                <p
+                                    className="text-base z-[2] relative md:text-lg 2xl:text-xl transition-all duration-300"
                                     style={{
-                                        backgroundImage: isButtonHovered
-                                            ? currentContent.gradientBg
-                                            : `linear-gradient(#081533, #081533), ${currentContent.gradientBg}`,
-                                        backgroundOrigin: "border-box",
-                                        backgroundClip: "padding-box, border-box",
-                                        boxShadow: isButtonHovered
-                                            ? `0px 0px 50px 0px ${currentContent.glowColor}`
-                                            : "none",
+                                        backgroundImage: isButtonHovered ? "none" : currentContent.gradientBg,
+                                        WebkitBackgroundClip: isButtonHovered ? "unset" : "text",
+                                        WebkitTextFillColor: isButtonHovered ? "white" : "transparent",
                                     }}
                                 >
-                                    <p
-                                        className="text-base z-10 relative md:text-lg 2xl:text-xl transition-all duration-300"
-                                        style={{
-                                            backgroundImage: isButtonHovered ? "none" : currentContent.gradientBg,
-                                            WebkitBackgroundClip: isButtonHovered ? "unset" : "text",
-                                            WebkitTextFillColor: isButtonHovered ? "white" : "transparent"
-                                        }}
-                                    >
-                                        Get Started
-                                    </p>
-                                </button>
-                                <button className="btn-learn-more flex items-center text-white font-bold gap-2 transition-all duration-300 group">
-                                    Learn more <span className="arrow-icon transition-transform duration-300 group-hover:translate-x-1">→</span>
-                                </button>
-                            </div>
+                                    Get Started
+                                </p>
+                            </button>
+                            <button
+                                className="cursor-pointer min-w-max py-[14px] px-5 lg:text-lg md:text-base text-sm 2xl:text-xl font-bold text-white rounded-[10px] relative group flex items-center bg-transparent text-white gap-x-[18px] font-Nunito font-bold 2xl:text-lg text-base"
+                                name="button"
+                            >
+                                Learn more
+                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="transition-transform duration-300 group-hover:translate-x-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                                </svg>
+                            </button>
                         </div>
                     </div>
 
-                    {/* Right Column: Animation */}
-                    <div className="flex relative items-center justify-center w-full min-h-[300px] md:min-h-[500px] overflow-visible">
-                        <div
-                            key={currentAnimIndex}
-                            className="animate-hero-fade-in scale-75 xl:scale-90 2xl:scale-100 w-full h-full flex items-center justify-center"
-                            style={{
-                                transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)",
-                                opacity: 1,
-                                transitionDelay: `${ANIM_COMPONENTS[currentAnimIndex].delay * 0.3}s`,
-                            }}
-                        >
-                            <ActiveComponent />
+                    {/* Right Column: Animation spanning rows 1-2 */}
+                    <div className="md:row-start-1 row-start-2 md:col-start-2 md:row-span-2 flex items-center order-1 w-full sm:h-full md:order-2 sm:mt-0">
+                        <div className="max-w-[717px] h-[300px] md:h-[500px] z-[10] w-full flex items-center sm:pt-0">
+                            <div
+                                key={currentAnimIndex}
+                                className="flex items-center justify-center w-full h-full"
+                                style={{
+                                    transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)",
+                                    opacity: 1,
+                                    transitionDelay: `${ANIM_COMPONENTS[currentAnimIndex].delay * 0.3}s`,
+                                }}
+                            >
+                                <ActiveComponent />
+                            </div>
                         </div>
                     </div>
 
