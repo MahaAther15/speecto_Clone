@@ -13,28 +13,28 @@ import ContactUs from '../../sections/contact/ContactUs.jsx'
 import Footer from '../../sections/Footer/Footer.jsx'
 
 const Home = () => {
-  return (
-    <div className="min-h-screen relative bg-white dark:bg-darkBg text-slate-900 dark:text-white transition-colors duration-300">
-      <Navbar />
-      <div className="flex flex-col">
-        <Hero />
-        <div className="pt-[50px]">
-          <Work />
+    return (
+        <div className="min-h-screen relative bg-white dark:bg-darkBg text-slate-900 dark:text-white transition-colors duration-300">
+            <Navbar />
+            <div className="flex flex-col">
+                <Hero />
+                <div className="pt-[50px]">
+                    <Work />
+                </div>
+                <div className="flex flex-col gap-[50px] md:gap-[80px] mt-[50px] md:mt-[80px]">
+                    <Requirement />
+                    <ProductDesign />
+                    <SystemDesign />
+                    <Development />
+                    <Testing />
+                    <Production />
+                    <Deployment />
+                    <ContactUs />
+                </div>
+            </div>
+            <Footer />
         </div>
-        <div className="flex flex-col gap-[50px] md:gap-[80px] mt-[50px] md:mt-[80px]">
-          <Requirement />
-          <ProductDesign />
-          <SystemDesign />
-          <Development />
-          <Testing />
-          <Production />
-          <Deployment />
-          <ContactUs />
-        </div>
-      </div>
-      <Footer />
-    </div>
-  )
+    )
 }
 
 export default Home

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import Services from './pages/services/Services'
 import SAAS from './pages/services/SAAS'
 import WEB from './pages/services/WEB'
