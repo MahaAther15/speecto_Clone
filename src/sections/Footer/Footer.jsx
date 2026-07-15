@@ -4,7 +4,7 @@ import speectoLogo from "../../assets/asset/speectoLogo.png";
 const Footer = () => {
     return (
         <footer>
-            <div className="w-full 2xl:py-[50px] py-10 2xl:px-[150px] xl:px-20 md:px-10 px-5 mt-[100px]">
+            <div className="w-full 2xl:py-[50px] py-10 2xl:px-[150px] xl:px-20 md:px-10 px-5 mt-10 md:mt-[100px]">
                 {/* Logo & Newsletter Heading */}
                 <div className="max-w-[429px] m-auto flex flex-col items-center">
                     <a title="link" className="mb-5 2xl:mb-[30px] 2xl:max-w-[232px] lg:max-w-[190px] md:max-w-[180px] sm:max-w-[170px] max-w-[150px] w-full" href="/">

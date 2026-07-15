@@ -1,12 +1,12 @@
 import React from "react";
 import reactLogo from "../../../../assets/asset/reactIcon2.webp";
 
-const CenterDisplay = ({ hoveredComponent }) => {
+const CenterDisplay = ({ activeComponent }) => {
     return (
         <div className="absolute w-[170px] h-[170px] z-10 flex items-center justify-center pointer-events-none">
-            {hoveredComponent ? (
-                <div className="absolute w-[600px] h-[600px] flex items-center justify-center transform scale-[0.48] transition-all duration-300">
-                    {hoveredComponent}
+            {activeComponent ? (
+                <div className="absolute w-[600px] h-[600px] flex items-center justify-center transform scale-[0.48] [&>div]:!scale-100 transition-all duration-300">
+                    {activeComponent}
                 </div>
             ) : (
                 <img

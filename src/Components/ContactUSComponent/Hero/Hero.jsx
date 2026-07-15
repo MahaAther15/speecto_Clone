@@ -11,9 +11,9 @@ const Hero = () => {
                 </h1>
 
                 {/* Right - Video assets instead of animation with imgs */}
-                <div className="md:flex hidden h-full items-center">
-                    <div className="contactUsAnimationWrapper mx-auto w-full mt-[-50px] md:h-[250px] h-[460px] sm:h-[400px] lg:h-[400px] lg:max-w-none max-w-[350px] flex items-center justify-center">
-                        <div className="relative w-[100%] sm:w-[70%] md:w-[90%] h-[90%] flex justify-center items-center">
+                <div className="md:flex hidden h-full items-center relative">
+                    <div className="contactUsAnimationWrapper mx-auto w-full mt-[-50px] md:h-[250px] h-[460px] sm:h-[400px] lg:h-[400px] lg:max-w-none max-w-[350px] flex items-center justify-center relative">
+                        <div className="absolute w-full max-w-[300px] sm:max-w-[400px] mx-auto top-[50%] translate-y-[-50%] h-full">
                             <video
                                 src={contactus}
                                 autoPlay

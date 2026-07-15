@@ -33,8 +33,9 @@ const GearSVG = ({ size = 40, color = "#7c3aed" }) => (
 
 const ProductDesignAnimation = () => {
   return (
-    <div>
-      <div className="absolute mt-[-48px] left-8 opacity-50">
+    <div className="w-full h-full flex items-center justify-center overflow-hidden lg:overflow-visible">
+      <div className="relative w-full h-full flex items-center justify-center scale-[0.80] sm:scale-[0.90] md:scale-100 mx-auto origin-center">
+        <div className="absolute mt-[-48px] left-8 opacity-50">
         <img
           src={productDesignLightBg}
           alt="Tree Diagram"
@@ -192,6 +193,7 @@ const ProductDesignAnimation = () => {
         />
       </div>
     </div>
+  </div>
   );
 };
 

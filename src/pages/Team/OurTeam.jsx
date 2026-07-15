@@ -10,7 +10,9 @@ const OurTeam = () => {
             <Navbar />
             <Hero />
             <InfoCard />
-            <ContactUs />
+            <div className="hidden md:block">
+                <ContactUs />
+            </div>
             <Footer />
         </div>
     )

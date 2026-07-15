@@ -4,8 +4,8 @@ import "./Mobile.css";
 
 const Mobile = () => {
     return (
-        <div className="mobile-wrapper relative w-full  h-full flex items-center justify-center">
-            <div className="mobile-animation-container relative flex items-start justify-start   lg:w-[360px] lg:h-[360px]">
+        <div className="mobile-wrapper relative w-full h-full flex items-center justify-center scale-[0.65] sm:scale-[0.85] md:scale-100 mx-auto my-auto origin-center">
+            <div className="mobile-animation-container relative flex items-center justify-center w-[360px] h-[360px] m-auto">
                 {/* Floating Geometric Background Shapes */}
                 <div className="mobile-shapes-layer z-0 absolute inset-0 w-full h-full pointer-events-none">
                     {/* Top Left Dashes */}
@@ -29,7 +29,7 @@ const Mobile = () => {
                 </div>
 
                 {/* Central Mobile Image Layer */}
-                <div className="mobile-scene z-10 w-full   flex items-start justify-center">
+                <div className="mobile-scene z-10 w-full h-full flex items-center justify-center m-auto">
                     <img
                         src={mobile5}
                         alt="Mobile App"

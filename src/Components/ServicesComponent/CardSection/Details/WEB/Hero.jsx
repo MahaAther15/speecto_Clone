@@ -17,7 +17,7 @@ const Hero = () => {
                             Product design is a multidisciplinary approach that combines user research, Fusing creativity, user-centered thinking, and functional aesthetics to craft innovative and delightful products that solve real-world problems and enhance user experiences.
                         </p>
                         <Link to="/contact">
-                            <button className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto p-[2px] bg-buttontextGradient md:min-w-0 min-w-full" style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 4px" }}>
+                            <button className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto p-[2px] bg-buttontextGradient" style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 4px" }}>
                                 <div className="rounded-[10px] w-full flex items-center justify-center bg-lightBg dark:bg-darkBg">
                                     <div className="flex z-[3] relative !text-transparent group-hover:!text-white group-hover:!bg-white !bg-clip-text bg-buttontextGradient py-2 sm:py-[11px] px-5 sm:px-[25px]">
                                         Get Started

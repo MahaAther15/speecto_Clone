@@ -32,8 +32,8 @@ const Laptop = () => {
     }, []);
 
     return (
-        <div className="wrapper relative w-full h-full flex items-center justify-center">
-            <div className="animation-container relative flex items-center justify-center top-10 right- w-[600px] h-[500px]">
+        <div className="wrapper relative w-full h-full flex items-center justify-center scale-[0.45] sm:scale-[0.75] md:scale-100 mx-auto my-auto origin-center">
+            <div className="animation-container relative flex items-center justify-center w-[600px] h-[500px] m-auto">
                 {/* Floating Geometric Background Shapes */}
                 <div className="floating-shapes-layer z-0 absolute inset-0 w-full h-full pointer-events-none">
                     {/* Orange/Red Circles */}

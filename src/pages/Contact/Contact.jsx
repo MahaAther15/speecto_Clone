@@ -8,11 +8,14 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <div className="md:gap-[80px] gap-[50px] flex flex-col md:p-0 pt-[100px] overflow-hidden pb-12 md:pb-20">
+      <div className="md:gap-[80px] gap-[50px] flex flex-col md:p-0 pt-[100px] overflow-hidden pb-0 md:pb-10">
         <Hero />
         <Info />
       </div>
-      <Footer />
+      <div className='footer'>
+        <Footer  />
+
+      </div>
     </>
   );
 };

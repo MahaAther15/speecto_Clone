@@ -19,30 +19,30 @@ import checkIcon from "../../../assets/asset/check.svg";
 
 const Requirement = () => {
   return (
-    <div className="container relative developmentDesign">
+    <div className="container relative developmentDesign w-full max-w-full overflow-hidden lg:overflow-visible">
       <div className="flex flex-col items-center">
         {/* req circle */}
         <div className="dark:bg-blueGradientBoxDark text-white bg-blueGradientBox relative 2xl:text-2xl lg:text-xl sm:text-lg text-base font-Nunito font-bold rounded-full sm:w-[50px] sm:h-[50px] w-10 h-10 md:w-[60px] md:h-[60px] flex items-center justify-center">
           1
         </div>
         <a title="link" href="/requirement-engineering">
-          <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px]    text-xl font-bold font-Nunito  text-center mt-[30px] !text-transparent dark:bg-blueGradientTextDark bg-blueGradientText bg-clip-text lg:tracking-[0.2em] tracking-[0.1em] 2xl:tracking-[0.3em] !uppercase">
+          <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] text-xl font-bold font-Nunito text-center mt-[30px] !text-transparent dark:bg-blueGradientTextDark bg-blueGradientText bg-clip-text lg:tracking-[0.2em] tracking-[0.1em] 2xl:tracking-[0.3em] !uppercase">
             Requirements Engineering
           </h2>
         </a>
       </div>
 
-      <div className="grid md:grid-cols-[39%_60%] lg:grid-cols-[46.29%_50.61%] gap-[1%] md:gap-[3.4%] lg:gap-[45px]">
+      <div className="grid md:grid-cols-[39%_60%] lg:grid-cols-[46.29%_50.61%] gap-[1%] md:gap-[3.4%] lg:gap-[45px] w-full max-w-full overflow-hidden lg:overflow-visible">
         {/* Left side: Animated Vectors / Graphical representation */}
-        <div className="relative flex items-start justify-center order-2 h-full pt-14 md:pt-[20%] lg:order-1">
+        <div className="relative flex items-start justify-center order-1 h-full pt-2 md:pt-[20%] lg:order-1 w-full overflow-hidden lg:overflow-visible">
           <RequirmentAnimation />
         </div>
 
         {/* Right side: Steps Timeline */}
-        <div className="order-2">
+        <div className="order-2 w-full max-w-full">
           <div>
             {/* Placeholder Hidden Item 1 */}
-            <div className="before:left-[4px] after:left-[4px] md:pt-[100px] before:hidden after:hidden md:before:block md:after:block relative before:absolute after:h-[calc(100%+30px)] before:h-[calc(100%+30px)] before:z-10 after:w-[2px] after:top-0 after:transition-all after:duration-700 after:absolute after:z-20 before:w-[1px] before:block fadeInTimeLine">
+            <div className="hidden md:block before:left-[4px] after:left-[4px] md:pt-[100px] before:hidden after:hidden md:before:block md:after:block relative before:absolute after:h-[calc(100%+30px)] before:h-[calc(100%+30px)] before:z-10 after:w-[2px] after:top-0 after:transition-all after:duration-700 after:absolute after:z-20 before:w-[1px] before:block fadeInTimeLine">
               <div className="justify-start items-center flex 2xl:gap-8 md:gap-[35px] gap-0">
                 <div className="activeTimelineBorder hidden relative z-30 -ml-[5px] h-5 w-5 rounded-full activeTimelineBorder 2xl:mr-4 transition-all duration-700 undefined"></div>
                 <div className="mx-auto md:mx-0 dark:bg-gray6 bg-gray7 hidden justify-center w-[50px] h-[50px] md:w-10 md:h-10 2xl:w-[50px] 2xl:h-[50px] rounded-[10px] flex justify-center items-center">

@@ -15,7 +15,7 @@ import SystemDesignAnimation from "./SystemDesignAnimation";
 
 const SystemDesign = () => {
   return (
-    <div className="flex flex-col items-center bg-white lg:px-1 py-5">
+    <div className="flex flex-col items-center bg-white lg:px-1 py-5 w-full max-w-full overflow-hidden lg:overflow-visible">
       {/* HEADER */}
       <div className="relative h-[70px] w-6 flex justify-center">
         <div className="timeline-lineHeader3"></div>
@@ -32,11 +32,11 @@ const SystemDesign = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex flex-col lg:flex-row max-w-6xl w-full items-center lg:items-start relative">
+      <div className="flex flex-col lg:flex-row max-w-6xl w-full max-w-full items-center lg:items-start relative overflow-hidden lg:overflow-visible">
         {/* LEFT COLUMN */}
         <div className=" lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-12 w-[350px] self-start flex items-start justify-center lg:pt-[px] lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full  h-[400px] lg:w-[550px] lg:-ml-8 lg:h-[600px] mx-auto ml-3 overflow-hidden flex items-center justify-center font-sans">
-            <div className="">
+          <div className="relative w-full h-[310px] sm:h-[400px] lg:w-[550px] lg:-ml-8 lg:h-[600px] mx-auto ml-3 overflow-hidden lg:overflow-visible flex items-center justify-center font-sans">
+            <div className="w-full h-full flex items-center justify-center">
               <SystemDesignAnimation />
             </div>
           </div>

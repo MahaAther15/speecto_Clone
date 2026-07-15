@@ -60,7 +60,7 @@ const steps = [
 
 const ProductDesign = () => {
     return (
-        <div className="container relative developmentDesign">
+        <div className="container relative developmentDesign w-full max-w-full overflow-hidden lg:overflow-visible">
             {/* ── Section Header ── */}
             <div className="relative">
                 <div className="z-50 flex flex-col items-center justify-center w-full">
@@ -84,13 +84,13 @@ const ProductDesign = () => {
             </div>
 
             {/* ── Two-column grid ── */}
-            <div className="grid md:grid-cols-[50.61%_46.29%] sm:gap-[3.4%] items-start">
+            <div className="grid md:grid-cols-[50.61%_46.29%] sm:gap-[3.4%] items-start w-full max-w-full overflow-hidden lg:overflow-visible">
 
                 {/* ── LEFT COLUMN: Timeline ── */}
-                <div className="md:order-1 order-2">
+                <div className="md:order-1 order-2 w-full max-w-full">
                     <div>
                         {/* Hidden placeholder (creates top padding + fade-in line) */}
-                        <div className="before:right-[1px] after:right-[1px] md:pt-[100px] before:hidden after:hidden md:before:block md:after:block relative before:absolute after:h-[calc(100%+30px)] before:h-[calc(100%+30px)] before:z-10 after:w-[2px] after:top-0 after:transition-all after:duration-700 after:absolute after:z-20 before:w-[1px] before:block fadeInProductLine">
+                        <div className="hidden md:block before:right-[1px] after:right-[1px] md:pt-[100px] before:hidden after:hidden md:before:block md:after:block relative before:absolute after:h-[calc(100%+30px)] before:h-[calc(100%+30px)] before:z-10 after:w-[2px] after:top-0 after:transition-all after:duration-700 after:absolute after:z-20 before:w-[1px] before:block fadeInProductLine">
                             <div className="justify-start flex-row-reverse items-center flex 2xl:gap-8 md:gap-[35px] gap-0">
                                 {/* Hidden dot */}
                                 <div className="productDesignCircle hidden relative z-30 -mr-[8px] h-5 w-5 rounded-full transition-all duration-700" />
@@ -151,10 +151,10 @@ const ProductDesign = () => {
                 </div>
 
                 {/* ── RIGHT COLUMN: Illustration ── */}
-                <div className="order-1 md:order-2 relative flex h-full items-start justify-center pt-[60px] mt-[80px] sm:mt-[40px] md:mt-0 productDesignIllustrationWrapper md:pt-[20%] lg:pt-[15%]">
-                    <div className="sticky w-full sm:max-w-none max-w-[400px] md:top-[20%] lg:top-[25%] xl:top-[calc(50%-130px)] 2xl:top-[calc(50%-100px)]">
+                <div className="order-1 md:order-2 relative flex h-full items-start justify-center pt-2 mt-4 sm:mt-[40px] md:mt-0 productDesignIllustrationWrapper md:pt-[20%] lg:pt-[15%] w-full overflow-hidden lg:overflow-visible">
+                    <div className="sticky w-full max-w-full md:top-[20%] lg:top-[25%] xl:top-[calc(50%-130px)] 2xl:top-[calc(50%-100px)] overflow-hidden lg:overflow-visible">
                         <div className="w-full">
-                            <div className="h-[250px] sm:h-[358px] md:h-auto relative w-full mx-auto sm:mb-0 mb-[50px]">
+                            <div className="h-[260px] sm:h-[358px] md:h-auto relative w-full mx-auto sm:mb-0 mb-0">
                                 <ProductDesignAnimation />
                             </div>
                         </div>

@@ -24,7 +24,7 @@ const Hero = () => {
                         </p>
 
                         {/* Our Team Button */}
-                        <button className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto p-[2px] bg-buttontextGradient md:min-w-0 min-w-full">
+                        <button className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto p-[2px] bg-buttontextGradient">
                             <div className="rounded-[10px] w-full flex items-center justify-center bg-lightBg dark:bg-darkBg">
                                 <div className="flex z-[3] relative !text-transparent group-hover:!text-white group-hover:!bg-white !bg-clip-text bg-buttontextGradient py-2 sm:py-[11px] px-5 sm:px-[25px]">
                                     Our Team
@@ -36,7 +36,7 @@ const Hero = () => {
 
                     {/* Right Image */}
                     <div>
-                        <div className="max-w-[200px] sm:max-w-[250px] md:max-w-[400px] mx-auto flex">
+                        <div className="max-w-[200px] sm:mt-6 sm:max-w-[250px] md:max-w-[400px] mx-auto flex">
                             <img
                                 src={aboutUsImg}
                                 alt="About Us"

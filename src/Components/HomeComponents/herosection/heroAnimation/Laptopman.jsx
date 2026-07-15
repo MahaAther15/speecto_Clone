@@ -24,18 +24,14 @@ import FrameStaric from "../../../../assets/asset/FrameStaric.webp";
 
 const Laptopman = () => {
   return (
-    <div className="man-laptop-wrapper scale-[1.2] relative w-full h-full flex items-center justify-center">
-      <div className="man-laptop-scene lg:mt-[30px] w-[300px] lg:h-[400px] relative">
+    <div className="man-laptop-wrapper scale-[0.60] sm:scale-[0.85] md:scale-[1.0] relative w-full h-full flex items-center justify-center mx-auto my-auto origin-center">
+      <div className="man-laptop-scene flex items-center justify-center w-[300px] h-[350px] relative m-auto">
         {/* Shadow Layer */}
         <img src={laptopShadow} alt="shadow" className="ml-img ml-shadow" />
 
         {/* Base Layer */}
         <img src={laptopBase} alt="laptop base" className="ml-img ml-base" />
-        <img
-          src={laptopBase2}
-          alt="keyboard button"
-          className="ml-img-key ml-base-key"
-        />
+        <img src={laptopBase3} alt="blue keyboard glow" className="ml-img ml-base-key-blue" />
         <img
           src={laptopBase2}
           alt="keyboard button"

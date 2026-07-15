@@ -14,7 +14,9 @@ const Services = () => {
             <Hero />
             <Card />
             <Experiences />
-            <ContactUs />
+            <div className="-mb-14 md:-mb-24">
+                <ContactUs />
+            </div>
             <Footer />
         </div>
     )

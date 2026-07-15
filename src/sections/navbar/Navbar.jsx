@@ -174,7 +174,7 @@ const Navbar = () => {
 
             {/* Mobile Drawer Panel */}
             <div
-                className={`lg:hidden block fixed p-4 w-[60%] max-w-[280px] overflow-auto h-screen z-[999999999] shadow-md transition-all duration-300 bg-blueGradientBoxDark top-0 ${menuOpen ? "left-0" : "left-[-60%]"
+                className={`lg:hidden block fixed p-4 w-[60%] max-w-[280px] overflow-auto h-screen z-[999999999] shadow-md transition-all duration-300 bg-gradient-to-br from-[#0047fc] to-[#00c6ff] top-0 ${menuOpen ? "left-0" : "left-[-60%]"
                     }`}
             >
                 {/* Close Button */}

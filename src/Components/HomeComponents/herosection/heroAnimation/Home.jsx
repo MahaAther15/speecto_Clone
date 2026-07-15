@@ -14,7 +14,8 @@ import MobileAnimation from "./Mobile.jsx";
 import CenterDisplay from "./CenterDisplay.jsx";
 
 const Home = () => {
-    const [hoveredComponent, setHoveredComponent] = useState(null);
+    const [hoveredName, setHoveredName] = useState(null);
+    const [selectedName, setSelectedName] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -27,6 +28,7 @@ const Home = () => {
         {
             id: 1,
             type: "component",
+            name: "laptop",
             component: <LaptopAnimation />,
             img: bannerReactCircle1,
             angle: 0,
@@ -38,6 +40,7 @@ const Home = () => {
         {
             id: 5,
             type: "component",
+            name: "standing",
             component: <ManAnimation />,
             img: bannerReactCircle2,
             angle: 90,
@@ -49,6 +52,7 @@ const Home = () => {
         {
             id: 9,
             type: "component",
+            name: "laptopman",
             component: <ManLaptopAnimation />,
             img: bannerReactCircle3,
             angle: 180,
@@ -60,6 +64,7 @@ const Home = () => {
         {
             id: 13,
             type: "component",
+            name: "mobile",
             component: <MobileAnimation />,
             img: bannerReactCircle4,
             angle: 270,
@@ -69,108 +74,141 @@ const Home = () => {
         { id: 16, type: "orange-empty", angle: 338 },
     ];
 
+    const activeComponent = (() => {
+        const activeName = hoveredName || selectedName;
+        if (!activeName) return null;
+        const matchedNode = nodes.find((node) => node.name === activeName);
+        return matchedNode ? matchedNode.component : null;
+    })();
+
     return (
-        <div className="home-anim-wrapper flex w-[90%] h-[260px] lg:h-[400px] items-center justify-center lg:-mt-6 mt-0">
+        <div className="home-anim-wrapper flex w-full h-full items-center justify-center">
             <style>{`
-        @keyframes orbit-spin {
+        @keyframes waving-hand {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
-        @keyframes orbit-spin-reverse {
+        @keyframes waving-hand-reverse {
           from { transform: rotate(0deg); }
           to { transform: rotate(-360deg); }
         }
-        .spin-orbit {
-          animation: orbit-spin 10s linear infinite;
+        .animate-waving-hand {
+          animation: waving-hand 10s linear infinite;
         }
-        .spin-orbit-reverse {
-          animation: orbit-spin-reverse 10s linear infinite;
+        .animate-waving-hand-reverse {
+          animation: waving-hand-reverse 10s linear infinite;
         }
         .spin-paused {
           animation-play-state: paused !important;
         }
       `}</style>
-            <div className="relative w-[180px] h-[180px] sm:w-[250px] sm:h-[250px] lg:w-[350px] lg:h-[350px] flex items-center justify-center">
+            <div className="relative w-[330px] h-[330px] flex items-center justify-center scale-[0.78] sm:scale-100 mx-auto origin-center">
                 {/* Center Image */}
-                <CenterDisplay hoveredComponent={hoveredComponent} />
+                <div className="absolute overflow-hidden flex justify-center items-center p-5 rounded-full w-[80%] sm:w-[67%] h-[80%] sm:h-[67%] m-auto inset-0">
+                    <CenterDisplay activeComponent={activeComponent} />
+                </div>
 
-                {/* Orbit */}
-                <div className="absolute sm:w-[300px] sm:h-[300px] w-[200px] h-[200px] z-20">
-                    {nodes.map((node) => {
-                        const isComponent = node.type === "component";
-                        const radius = isComponent ? (isLoaded ? 140 : 0) : 140;
-
-                        return (
-                            <div
-                                key={node.id}
-                                className="absolute top-1/2 left-1/2"
-                                style={{
-                                    transform: `rotate(${node.angle}deg)`,
-                                }}
-                            >
+                {/* 4 Revolving Icons */}
+                <div className="absolute w-full h-full pointer-events-none">
+                    <div
+                        className={`pointer-events-none rounded-full w-full h-full z-[199] absolute flex items-center inset-0 m-auto justify-center animate-waving-hand ${
+                            hoveredName ? "spin-paused" : ""
+                        }`}
+                    >
+                        {nodes
+                            .filter((node) => node.type === "component")
+                            .map((node) => (
                                 <div
-                                    className={`${isComponent ? "spin-orbit" : ""} ${hoveredComponent ? "spin-paused" : ""}`}
+                                    key={node.id}
+                                    className="absolute"
+                                    style={{
+                                        transform: `rotate(${node.angle}deg)`,
+                                    }}
                                 >
                                     <div
-                                        className="absolute"
                                         style={{
-                                            transform: `translate(${radius}px)`,
-                                            transition: isComponent
-                                                ? `transform 0.2s ease-out ${node.id * 0.05}s`
-                                                : "none",
+                                            transform: `translate(${isLoaded ? 132 : 0}px)`,
+                                            transition: "transform 0.4s ease-out",
                                         }}
                                     >
                                         <div
-                                            className={`${isComponent ? "spin-orbit-reverse" : ""} ${hoveredComponent ? "spin-paused" : ""}`}
+                                            className={`animate-waving-hand-reverse ${
+                                                hoveredName ? "spin-paused" : ""
+                                            }`}
                                         >
                                             <div
-                                                className="absolute flex items-center justify-center"
                                                 style={{
-                                                    width: "50px",
-                                                    height: "50px",
-                                                    top: "-25px",
-                                                    left: "-25px",
                                                     transform: `rotate(-${node.angle}deg)`,
                                                 }}
+                                                className="flex items-center justify-center w-[50px] h-[50px]"
                                             >
-                                                {/* COMPONENT NODE */}
-                                                {node.type === "component" && (
-                                                    <div
-                                                        className="lg:w-[36px] lg:h-[36px] w-[26px] h-[30px] rounded-full border-[2.5px] border-white overflow-hidden cursor-pointer bg-[#0e1635] flex items-center justify-center relative z-4 transition-transform duration-300 hover:scale-110"
-                                                        onMouseEnter={() =>
-                                                            setHoveredComponent(node.component)
-                                                        }
-                                                        onMouseLeave={() => setHoveredComponent(null)}
-                                                    >
-                                                        <img
-                                                            src={node.img}
-                                                            alt="banner"
-                                                            className="w-full z-50 h-full object-cover"
-                                                        />
-                                                    </div>
-                                                )}
-
-                                                {/* LARGE WHITE */}
-                                                {node.type === "large-white" && (
-                                                    <div className="lg:w-[36px] lg:h-[36px] w-[26px] h-[26px] rounded-full bg-white z-4"></div>
-                                                )}
-
-                                                {/* ORANGE */}
-                                                {node.type === "orange-empty" && (
-                                                    <div className="w-3.5 h-3.5 rounded-full border-[1.5px] border-[#fc5b3f]"></div>
-                                                )}
-
-                                                {/* SMALL WHITE */}
-                                                {node.type === "tiny-white" && (
-                                                    <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
-                                                )}
+                                                <div
+                                                    className={`pointer-events-auto bg-[#0f0563] cursor-pointer rounded-full border-2 overflow-hidden flex hover:border-transparent transition-all duration-150 ease-in z-[999] justify-center items-center lg:w-[48px] lg:h-[48px] w-[34px] h-[34px] hover:w-[14%] hover:h-[14%] scale-100 hover:scale-125 ${
+                                                        selectedName === node.name
+                                                            ? "border-[#fc5b3f] shadow-[0_0_10px_rgba(252,91,63,0.8)] scale-110"
+                                                            : "border-white"
+                                                    }`}
+                                                    onMouseEnter={() => setHoveredName(node.name)}
+                                                    onMouseLeave={() => setHoveredName(null)}
+                                                    onClick={() =>
+                                                        setSelectedName((prev) =>
+                                                            prev === node.name ? null : node.name
+                                                        )
+                                                    }
+                                                >
+                                                    <img
+                                                        src={node.img}
+                                                        alt=""
+                                                        className="rotate-90 z-[999] transition-all duration-200 ease-in flex-1 w-full h-full object-contain"
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        );
-                    })}
+                            ))}
+                    </div>
+                </div>
+
+                {/* 8 White Circles */}
+                <div className="flex items-center w-full h-full z-[101] absolute inset-0 m-auto justify-center pointer-events-none">
+                    {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, idx) => (
+                        <div
+                            key={idx}
+                            className="absolute z-[101] w-4 md:w-8 h-4 md:h-8 bg-white rounded-full flex justify-center items-center"
+                            style={{ transform: `rotate(${angle}deg) translate(132px)` }}
+                        ></div>
+                    ))}
+                </div>
+
+                {/* 16 Blue Empty Circles */}
+                <div className="flex z-[100] items-center w-full h-full absolute inset-0 m-auto justify-center pointer-events-none">
+                    {Array.from({ length: 16 }, (_, i) => i * 22.5).map((angle, idx) => (
+                        <div
+                            key={idx}
+                            className="absolute border bg-[#0f0563] border-primary1 rounded-full flex justify-center items-center"
+                            style={{
+                                transform: `rotate(${angle}deg) translate(132px)`,
+                                width: "2.68293%",
+                                height: "2.68293%",
+                            }}
+                        ></div>
+                    ))}
+                </div>
+
+                {/* 32 Tiny White Dots */}
+                <div className="z-[50] flex justify-center items-center w-full h-full absolute inset-0 m-auto rounded-full pointer-events-none">
+                    {Array.from({ length: 32 }, (_, i) => i * 11.25).map((angle, idx) => (
+                        <div
+                            key={idx}
+                            className="absolute bg-white rounded-full flex justify-center items-center"
+                            style={{
+                                transform: `rotate(${angle}deg) translate(132px)`,
+                                width: "1.01538%",
+                                height: "1.01538%",
+                            }}
+                        ></div>
+                    ))}
                 </div>
             </div>
         </div>

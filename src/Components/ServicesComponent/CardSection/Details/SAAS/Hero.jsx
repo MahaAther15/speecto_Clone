@@ -16,7 +16,7 @@ const Hero = () => {
                         </p>
                         <Link to="/contact">
                             <button 
-                                className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto p-[2px] bg-buttontextGradient md:min-w-0 min-w-full" 
+                                className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto p-[2px] bg-buttontextGradient" 
                                 style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 4px" }}
                             >
                                 <div className="rounded-[10px] w-full flex items-center justify-center bg-lightBg dark:bg-darkBg undefined">

@@ -1,6 +1,10 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import './ContactUs.css';
 
-const ContactUs = () => {
+const ContactUs = ({ buttonAlign }) => {
+    const location = useLocation();
+    const align = buttonAlign || (location && location.pathname.includes('/contact') ? "left" : "center");
     return (
         <div id="contactUs">
             <div className="container relative">
@@ -94,18 +98,18 @@ const ContactUs = () => {
                             </div>
 
                             {/* Submit Button */}
-                            <div className="flex justify-center items-center">
+                            <div className="w-full flex items-center justify-center">
                                 <button
                                     type="submit"
-                                    className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto p-[2px] bg-buttontextGradient md:min-w-0 min-w-full 2xl:mt-24 lg:mt-14 md:mt-10 mt-5"
+                                    className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-[110px] min-w-[110px] h-max mx-auto p-[2px] bg-buttontextGradient 2xl:mt-24 lg:mt-14 md:mt-10 mt-5"
                                     style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 4px' }}
                                 >
                                     <div className="rounded-[10px] w-full flex items-center justify-center bg-lightBg dark:bg-darkBg !bg-white dark:!bg-darkBg">
-                                        <div className="flex z-[3] relative !text-transparent group-hover:!text-white group-hover:!bg-white !bg-clip-text bg-buttontextGradient py-2 sm:py-[11px] px-5 sm:px-[25px]">
+                                        <div className="flex z-[3] relative !text-transparent group-hover:!text-white group-hover:!bg-white !bg-clip-text bg-buttontextGradient py-2 sm:py-[11px] px-3">
                                             Submit
                                         </div>
                                     </div>
-                                    <div className="absolute z-[1] left-0 top-0 content-[''] h-full bg-darkBg transition-all duration-300 bg-buttontextGradient group-hover:w-full w-0"></div>
+                                    <div className="absolute z-[1] left-0 top-0 content-[' '] h-full bg-darkBg transition-all duration-300 bg-buttontextGradient group-hover:w-full w-0"></div>
                                 </button>
                             </div>
 

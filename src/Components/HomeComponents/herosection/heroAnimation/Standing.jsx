@@ -11,8 +11,8 @@ import dashboard2 from "../../../../assets/asset/psRound2.webp";
 
 const Standing = () => {
   return (
-    <div className="standing-animation-container">
-      <div className="isometric-scene">
+    <div className="standing-animation-container flex items-center justify-center w-full h-full mx-auto my-auto origin-center">
+      <div className="isometric-scene flex items-center justify-center m-auto">
         {/* Layered Platforms */}
         <div className="platform-base">
           <img src={baseImg} alt="Base Platform" className="platform-img" />

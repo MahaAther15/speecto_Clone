@@ -62,11 +62,11 @@ const CONTENT_VARIATIONS = [
 ];
 
 const ANIM_COMPONENTS = [
-    { component: LaptopAnimation, delay: 0 },
-    { component: LaptopmanAnimation, delay: 1 },
-    { component: MobileAnimation, delay: 2 },
-    { component: StandingAnimation, delay: 3 },
-    { component: OrbitAnimation, delay: 4 },
+    { component: LaptopAnimation, name: "laptop" },
+    { component: MobileAnimation, name: "mobile" },
+    { component: StandingAnimation, name: "standing" },
+    { component: LaptopmanAnimation, name: "laptopman" },
+    { component: OrbitAnimation, name: "orbit" },
 ];
 
 function Hero() {
@@ -75,6 +75,7 @@ function Hero() {
     const [typewriterState, setTypewriterState] = useState("typing"); // "typing", "holding_full", "deleting", "holding_empty"
     const [isButtonHovered, setIsButtonHovered] = useState(false);
     const [currentAnimIndex, setCurrentAnimIndex] = useState(0);
+    const [isAnimVisible, setIsAnimVisible] = useState(false);
 
     useEffect(() => {
         const currentVariantIndex = loopNum % CONTENT_VARIATIONS.length;
@@ -110,28 +111,27 @@ function Hero() {
     }, [typedText, typewriterState, loopNum]);
 
     useEffect(() => {
-        const animInterval = setInterval(() => {
-            setCurrentAnimIndex((prev) => (prev + 1) % ANIM_COMPONENTS.length);
-        }, 5000);
-        return () => clearInterval(animInterval);
-    }, []);
+        // Pop out from exact center to full size
+        const popInTimer = setTimeout(() => {
+            setIsAnimVisible(true);
+        }, 50);
 
-    const renderAnimation = (index) => {
-        switch (index) {
-            case 0:
-                return <LaptopAnimation />;
-            case 1:
-                return <MobileAnimation />;
-            case 2:
-                return <OrbitAnimation />;
-            case 3:
-                return <LaptopmanAnimation />;
-            case 4:
-                return <StandingAnimation />;
-            default:
-                return <LaptopAnimation />;
-        }
-    };
+        // Stay in center for ~2.5 seconds, then shrink back into center
+        const exitTimer = setTimeout(() => {
+            setIsAnimVisible(false);
+        }, 3100);
+
+        // After shrinking completes, switch to next animation
+        const nextTimer = setTimeout(() => {
+            setCurrentAnimIndex((prev) => (prev + 1) % ANIM_COMPONENTS.length);
+        }, 3700);
+
+        return () => {
+            clearTimeout(popInTimer);
+            clearTimeout(exitTimer);
+            clearTimeout(nextTimer);
+        };
+    }, [currentAnimIndex]);
 
     const currentContent = CONTENT_VARIATIONS[loopNum % CONTENT_VARIATIONS.length];
     const holdTime = ((loopNum % CONTENT_VARIATIONS.length) === 4) ? 2000 : 1000;
@@ -230,12 +230,13 @@ function Hero() {
                     <div className="md:row-start-1 row-start-2 md:col-start-2 md:row-span-2 flex items-center order-1 w-full sm:h-full md:order-2 sm:mt-0">
                         <div className="max-w-[717px] h-[300px] md:h-[500px] z-[10] w-full flex items-center sm:pt-0">
                             <div
-                                key={currentAnimIndex}
-                                className="flex items-center justify-center w-full h-full"
+                                className="flex items-center justify-center w-full h-full origin-center"
                                 style={{
-                                    transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)",
-                                    opacity: 1,
-                                    transitionDelay: `${ANIM_COMPONENTS[currentAnimIndex].delay * 0.3}s`,
+                                    transform: isAnimVisible ? "scale(1)" : "scale(0)",
+                                    opacity: isAnimVisible ? 1 : 0,
+                                    transition: isAnimVisible
+                                        ? "transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.7s ease-out"
+                                        : "transform 0.6s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.6s ease-in",
                                 }}
                             >
                                 <ActiveComponent />

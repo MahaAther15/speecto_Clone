@@ -140,7 +140,7 @@ const teamMembers = [
 
 const InfoCard = () => {
   return (
-    <div className="container sm:grid-cols-2 lg:grid-cols-3 grid gap-5 md:mt-[60px] mt-10 lg:mt-20 xl:mt-[100px] 2xl:mt-[150px] mb-20">
+    <div className="container sm:grid-cols-2 lg:grid-cols-3 grid gap-5 md:mt-[60px] mt-10 lg:mt-20 xl:mt-[100px] 2xl:mt-[150px] mb-2 md:mb-10">
       {teamMembers.map((member) => (
         <div key={member.id} className="max-w-[390px] mx-auto">
           <div className="group relative cursor-pointer rounded-[20px] overflow-hidden animate-wiggle25 transition-all duration-500">

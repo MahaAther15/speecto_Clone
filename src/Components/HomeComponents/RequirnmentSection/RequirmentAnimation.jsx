@@ -11,9 +11,9 @@ import "./Sections.css";
 
 const RequirmentAnimation = () => {
   return (
-    <div className="lg:w-1/2 relative lg:sticky lg:top-32 flex justify-center">
-      <div className="h-[230px] md:h-[350px] mt-6 2xl:h-[410px] relative flex items-center 2xl:max-w-[650px] w-full lg:max-w-full md:max-w-[400px] sm:max-w-[350px] max-w-[250px] opacity-100">
-        <div className="req-animation-scaler">
+    <div className="lg:w-1/2 relative lg:sticky lg:top-32 flex justify-center w-full overflow-hidden lg:overflow-visible">
+      <div className="h-[295px] md:h-[350px] mt-4 2xl:h-[410px] relative flex items-center justify-center 2xl:max-w-[650px] w-full lg:max-w-full md:max-w-[400px] sm:max-w-[350px] max-w-full opacity-100 overflow-hidden lg:overflow-visible">
+        <div className="req-animation-scaler scale-[0.76] sm:scale-[0.88] md:scale-100 mx-auto origin-center">
           <div className="scene-wrapper">
             <div className="scene-container">
               {/* Background Elements */}

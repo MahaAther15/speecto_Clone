@@ -18,7 +18,7 @@ const Home = () => {
             <Navbar />
             <div className="flex flex-col">
                 <Hero />
-                <div className="pt-[50px]">
+                <div className="pt-[75px]">
                     <Work />
                 </div>
                 <div className="flex flex-col gap-[50px] md:gap-[80px] mt-[50px] md:mt-[80px]">

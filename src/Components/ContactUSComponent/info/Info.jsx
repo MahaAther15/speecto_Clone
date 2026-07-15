@@ -41,7 +41,7 @@ const Info = () => {
           </div>
           {/* Map Container - renders interactive Google Maps */}
           <div id="map" style={{ width: '100%', height: '330px', position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
-            <iframe 
+            <iframe
               title="Google Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9058444704043!2d-0.12615912336336338!3d51.51490367178497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ccab37652b%3A0x22220c3f07824033!2s75%20Shelton%20St%2C%20London%20WC2H%209JQ%2C%20UK!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
               width="100%"
@@ -93,10 +93,10 @@ const Info = () => {
                     <textarea name="message" className="!bg-transparent border-[1.5px] dark:!border-gray6 !border-gray7 dark:placeholder:text-gray6 placeholder:text-gray2 rounded-xl italic w-full h-full focus:outline-none text-gray1 2xl:px-5 px-3 bg-gray4 min-h-[100px] pt-3" placeholder="Write your message..."></textarea>
                   </div>
                 </div>
-                <div className="flex justify-center items-center !items-start !justify-start">
-                  <button type="submit" className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto p-[2px] bg-buttontextGradient md:min-w-0 min-w-full 2xl:mt-24 lg:mt-14 md:mt-10 mt-5">
-                    <div className="rounded-[10px] w-full flex items-center justify-center bg-lightBg dark:bg-darkBg !bg-white dark:!bg-darkBg">
-                      <div className="flex z-[3] relative !text-transparent group-hover:!text-white group-hover:!bg-white !bg-clip-text bg-buttontextGradient py-2 sm:py-[11px] px-5 sm:px-[25px]">Submit</div>
+                <div className="w-full flex items-center justify-center">
+                  <button type="submit" className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-[110px] min-w-[110px] h-max mx-auto p-[1.5px] sm:p-[2px] bg-buttontextGradient mt-5 md:mt-10 lg:mt-14 2xl:mt-24" style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 4px' }}>
+                    <div className="rounded-[10px] w-full flex items-center justify-center bg-white dark:bg-darkBg">
+                      <div className="flex z-[3] relative !text-transparent group-hover:!text-white group-hover:!bg-white !bg-clip-text bg-buttontextGradient py-2 sm:py-[11px] px-3 whitespace-nowrap">Submit</div>
                     </div>
                     <div className="absolute z-[1] left-0 top-0 content-[' '] h-full bg-darkBg transition-all duration-300 bg-buttontextGradient group-hover:w-full w-0"></div>
                   </button>

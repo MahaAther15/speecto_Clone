@@ -2,6 +2,7 @@
 .man-laptop-wrapper {
     perspective: 1200px;
     margin-top: 20px;
+    transform-style: preserve-3d;
 }
 
 /* Scene container */
@@ -9,8 +10,8 @@
     position: relative;
     height: 300px;
     width: 300px;
-    animation: seqScaleMobile 12s ease-in-out infinite;
     transform-origin: center center;
+    transform-style: preserve-3d;
 }
 
 @keyframes seqScaleMobile {
@@ -74,14 +75,21 @@
     width: 88%;
     top: 50%;
     left: 52%;
-    z-index: 2;
+    z-index: 4;
+}
+
+.ml-base-key-blue {
+    width: 58%;
+    top: 43%;
+    left: 54%;
+    z-index: 4;
 }
 
 .ml-base-key {
     width: 60%;
     top: 48%;
     left: 54%;
-    z-index: 2;
+    z-index: 4;
 }
 
 /* Screen container offsets */
@@ -92,20 +100,21 @@
     top: 0%;
     left: 43%;
     z-index: 5;
+    transform-style: preserve-3d;
 }
 
 .ml-screen-bg {
     width: 100%;
     top: 50%;
     left: 50%;
-    z-index: 1;
+    z-index: 3;
 }
 
 .ml-screen-text {
     width: 75%;
     top: 45%;
     left: 45%;
-    z-index: 2;
+    z-index: 4;
 }
 
 /* Left floating code frame */
