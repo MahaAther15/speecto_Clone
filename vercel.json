@@ -1,4 +1,10 @@
 {
-  "buildCommand": "cd speecto && npm install && npm run build",
-  "outputDirectory": "speecto/dist"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

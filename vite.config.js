@@ -7,5 +7,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: process.env.VITE_BASE_PATH || "/speecto_Clone",
+  // Vercel automatically sets process.env.VERCEL=1. Use "/" on Vercel, otherwise VITE_BASE_PATH or "/speecto_Clone" for GitHub Pages
+  base: process.env.VERCEL ? "/" : (process.env.VITE_BASE_PATH || "/speecto_Clone"),
 });
