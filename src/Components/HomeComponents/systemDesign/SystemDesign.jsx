@@ -32,10 +32,10 @@ const SystemDesign = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex flex-col lg:flex-row max-w-6xl w-full max-w-full items-center lg:items-start relative overflow-hidden lg:overflow-visible">
+      <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-0 max-w-6xl w-full max-w-full items-center lg:items-start relative overflow-hidden lg:overflow-visible">
         {/* LEFT COLUMN */}
-        <div className=" lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-12 w-[350px] self-start flex items-start justify-center lg:pt-[px] lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full h-[310px] sm:h-[400px] lg:w-[550px] lg:-ml-8 lg:h-[600px] mx-auto ml-3 overflow-hidden lg:overflow-visible flex items-center justify-center font-sans">
+        <div className="w-full max-w-[360px] sm:max-w-[460px] lg:max-w-none lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-12 self-start flex items-start justify-center pb-6 sm:pb-8 lg:pb-0 lg:mt-0 productDesignIllustrationWrapper">
+          <div className="relative w-full h-[280px] sm:h-[380px] lg:w-[550px] lg:-ml-8 lg:h-[600px] mx-auto overflow-hidden lg:overflow-visible flex items-center justify-center font-sans">
             <div className="w-full h-full flex items-center justify-center">
               <SystemDesignAnimation />
             </div>

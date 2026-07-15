@@ -1,5 +1,5 @@
 import React from "react";
-import contactus from "../../../assets/asset/contactUs.mp4";
+import contactVideo from "../../../assets/asset/Contact.mp4";
 
 const Hero = () => {
     return (
@@ -10,18 +10,16 @@ const Hero = () => {
                     <span className="!text-transparent bg-buttontextGradient bg-clip-text">Contact</span> Us
                 </h1>
 
-                {/* Right - Video assets instead of animation with imgs */}
-                <div className="md:flex hidden h-full items-center relative">
-                    <div className="contactUsAnimationWrapper mx-auto w-full mt-[-50px] md:h-[250px] h-[460px] sm:h-[400px] lg:h-[400px] lg:max-w-none max-w-[350px] flex items-center justify-center relative">
-                        <div className="absolute w-full max-w-[300px] sm:max-w-[400px] mx-auto top-[50%] translate-y-[-50%] h-full">
-                            <video
-                                src={contactus}
-                                autoPlay
-                                loop
-                                muted
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
+                {/* Right */}
+                <div className="w-full md:w-1/2 flex justify-center items-center">
+                    <div className="mb-7 pl-10 w-full max-w-[450px] flex justify-center items-center translate-x-6 translate-y-6">
+                        <video
+                            src={contactVideo}
+                            autoPlay
+                            loop
+                            muted
+                            className="w-full h-auto object-contain"
+                        />
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ import codeIcon from "../../../assets/asset/code.svg";
 
 const Development = () => {
     return (
-        <div className="container relative developmentSectionDesign">
+        <div className="container relative developmentSectionDesign w-full max-w-full overflow-hidden md:overflow-visible">
             <div className="relative">
                 <div className="z-50 flex flex-col items-center justify-center w-full">
                     <div className="w-[2px] h-[90px] dark:bg-developmentVerticleLineGradient bg-developmentVerticleLineGradient"></div>
@@ -24,7 +24,7 @@ const Development = () => {
                 </div>
             </div>
 
-            <div className="grid md:grid-cols-[50.61%_46.29%] md:gap-[3.4%]">
+            <div className="grid md:grid-cols-[50.61%_46.29%] gap-8 sm:gap-10 md:gap-[3.4%] w-full max-w-full overflow-hidden md:overflow-visible">
                 {/* LEFT COLUMN: Timeline */}
                 <div className="md:order-1 order-2">
                     <div>
@@ -59,10 +59,10 @@ const Development = () => {
                                 </div>
                             </div>
                             <div className="items-center md:items-end 2xl:mr-[40px] md:mr-[42px] flex flex-col 2xl:pb-[50px] lg:pb-9 pb-5 overflow-hidden">
-                                <h3 className="font-Nunito 2xl:text-2xl lg:text-xl text-lg font-bold text-black dark:text-white mt-[10px] md:dark:text-opacity-50 md:text-opacity-50 text-opacity-100">
+                                <h3 className="font-Nunito text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-2xl font-bold text-black dark:text-white mt-[10px] md:dark:text-opacity-50 md:text-opacity-50 text-opacity-100">
                                     Using scrum
                                 </h3>
-                                <p className="font-Nunito 2xl:text-xl xl:text-lg text-base font-bold mt-[10px] text-gray5 text-center md:text-right">
+                                <p className="font-Nunito text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-medium md:font-bold mt-[10px] px-4 sm:px-6 md:px-0 text-gray5 text-center md:text-right leading-relaxed sm:leading-relaxed md:leading-normal">
                                     At our software development company, we use the Scrum framework to develop software iteratively, in close collaboration with our clients, emphasizing flexibility, continuous improvement, and rapid delivery of high-quality software products. By using Scrum, we prioritize customer satisfaction, team communication, and product adaptability, ensuring that we meet the evolving needs of our clients throughout the software development lifecycle.
                                 </p>
                             </div>
@@ -79,10 +79,10 @@ const Development = () => {
                                 </div>
                             </div>
                             <div className="items-center md:items-end 2xl:mr-[40px] md:mr-[42px] flex flex-col 2xl:pb-[50px] lg:pb-9 pb-5 overflow-hidden">
-                                <h3 className="font-Nunito 2xl:text-2xl lg:text-xl text-lg font-bold text-black dark:text-white mt-[10px] md:dark:text-opacity-50 md:text-opacity-50 text-opacity-100">
+                                <h3 className="font-Nunito text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-2xl font-bold text-black dark:text-white mt-[10px] md:dark:text-opacity-50 md:text-opacity-50 text-opacity-100">
                                     Code Quality
                                 </h3>
-                                <p className="font-Nunito 2xl:text-xl xl:text-lg text-base font-bold mt-[10px] text-gray5 text-center md:text-right">
+                                <p className="font-Nunito text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-medium md:font-bold mt-[10px] px-4 sm:px-6 md:px-0 text-gray5 text-center md:text-right leading-relaxed sm:leading-relaxed md:leading-normal">
                                     Emphasizing code quality is crucial to achieving superior software quality, and we achieve this through various techniques such as automated testing, code reviews, and strict adherence to coding standards. By prioritizing the quality of the code, we can create a highly reliable, maintainable, and efficient software product that meets the ever-changing demands of our clients.
                                 </p>
                             </div>
@@ -91,7 +91,7 @@ const Development = () => {
                 </div>
 
                 {/* RIGHT COLUMN: Illustration / Animation */}
-                <div className="md:order-2 order-1 relative flex w-full h-full items-start md:pt-[20%] lg:pt-[15%]">
+                <div className="md:order-2 order-1 relative flex w-full h-full items-start mt-4 mb-4 sm:mt-8 sm:mb-8 md:mt-0 md:mb-0 md:pt-[20%] lg:pt-[15%]">
                     <div className="sticky md:top-[20%] lg:top-[25%] xl:top-[calc(50%-130px)] 2xl:top-[calc(50%-100px)] w-full flex justify-center items-center">
                         <DevelopmentAnimation />
                     </div>

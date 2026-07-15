@@ -33,7 +33,7 @@ const Gear6SVG = ({ size = 50, color = "#8b95a1" }) => (
 const SystemDesignAnimation = () => {
   return (
     <div className="w-full h-full flex items-center justify-center overflow-hidden lg:overflow-visible">
-      <div className="relative w-full h-full flex items-center justify-center scale-[0.78] sm:scale-[0.88] md:scale-100 mx-auto origin-center">
+      <div className="relative w-full h-full flex items-center justify-center scale-[0.56] sm:scale-[0.74] md:scale-[0.84] lg:scale-100 mx-auto origin-center">
         <div className="sda-scene">
       {/* Background image layer */}
       <img src={systemDesignLightBg} alt="" className="sda-bg-layer" />

@@ -34,9 +34,9 @@ const Deployment = () => {
 
 
                 {/* ── Title ── */}
-                <a title="link" href="/automated-development">
+                <a title="link" href="/automated-development" className="text-center w-full block">
                     <h2
-                        className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] text-xl font-bold font-Nunito !text-transparent bg-clip-text lg:tracking-[0.2em] tracking-[0.1em] 2xl:tracking-[0.3em] !uppercase"
+                        className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] text-xl font-bold font-Nunito !text-transparent bg-clip-text lg:tracking-[0.2em] tracking-[0.1em] 2xl:tracking-[0.3em] !uppercase text-center mx-auto"
                         style={{ backgroundImage: "linear-gradient(90deg,#ff416c,#ff4b2b)" }}
                     >
                         Automated deployment
@@ -44,7 +44,7 @@ const Deployment = () => {
                 </a>
 
                 {/* ── Description ── */}
-                <p className=" font-Nunito 2xl:text-xl xl:text-lg text-base font-medium !font-bold text-gray5 text-center">
+                <p className="font-Nunito text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-medium md:!font-bold text-gray5 text-center px-4 sm:px-6 md:px-0 leading-relaxed sm:leading-relaxed md:leading-normal">
                     Automated deployment ensures a smoother and safer production process by streamlining deployment, reducing human error, and allowing for faster and more consistent releases. It can be achieved through continuous integration and delivery tools, leading to an efficient and reliable production process.
                 </p>
 

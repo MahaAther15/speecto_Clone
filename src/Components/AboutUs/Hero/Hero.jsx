@@ -36,7 +36,7 @@ const Hero = () => {
 
                     {/* Right Image */}
                     <div>
-                        <div className="max-w-[200px] sm:mt-6 sm:max-w-[250px] md:max-w-[400px] mx-auto flex">
+                        <div className="max-w-[200px] sm:max-w-[250px] md:max-w-[400px] mx-auto flex">
                             <img
                                 src={aboutUsImg}
                                 alt="About Us"

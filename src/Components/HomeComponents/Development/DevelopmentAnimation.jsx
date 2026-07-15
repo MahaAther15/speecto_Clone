@@ -20,89 +20,95 @@ const GearSVG = ({ size = 40, color = "#c5c4c7ff" }) => (
 const DevelopmentAnimation = () => {
   const barHeights = ["40%", "70%", "60%", "90%", "50%", "75%"];
   return (
-    <section className="hero-container1 sm:hero-container fade-in">
-      <div className="floating-card card-top-left">
-        {/* Dark header with 3 white dots */}
-        <div className="sda-cloud-hdr1">
-          <span className="sda-cloud-dot" />
-          <span className="sda-cloud-dot" />
-          <span className="sda-cloud-dot" />
-        </div>
-        <div className="pulse-circle"></div>
-      </div>
+    <div className="w-full flex items-center justify-center overflow-hidden md:overflow-visible">
+      <div className="relative w-[270px] h-[160px] sm:w-[390px] sm:h-[220px] md:w-[420px] md:h-[235px] lg:w-[460px] lg:h-[260px] xl:w-[535px] xl:h-[300px] 2xl:w-[630px] 2xl:h-[355px] mx-auto flex items-center justify-center overflow-hidden md:overflow-visible">
+        <div className="absolute top-[10px] left-[10px] sm:top-[5px] sm:left-[6px] md:static md:top-auto md:left-auto origin-top-left md:origin-center scale-[0.28] sm:scale-[0.42] md:scale-[0.45] lg:scale-[0.50] xl:scale-[0.58] 2xl:scale-[0.68] mx-auto">
+          <section className="hero-container1 sm:hero-container fade-in">
+            <div className="floating-card card-top-left">
+              {/* Dark header with 3 white dots */}
+              <div className="sda-cloud-hdr1">
+                <span className="sda-cloud-dot" />
+                <span className="sda-cloud-dot" />
+                <span className="sda-cloud-dot" />
+              </div>
+              <div className="pulse-circle"></div>
+            </div>
 
-      <div className="card-top-right">
-        <div className="chart-wrapper">
-          {/* 1. The Bars */}
-          {barHeights.map((h, i) => (
-            <div
-              key={i}
-              className="mt-10 mb-[-6px] bar"
-              style={{ height: h }}
-            ></div>
-          ))}
+            <div className="card-top-right">
+              <div className="chart-wrapper">
+                {/* 1. The Bars */}
+                {barHeights.map((h, i) => (
+                  <div
+                    key={i}
+                    className="mt-10 mb-[-6px] bar"
+                    style={{ height: h }}
+                  ></div>
+                ))}
 
-          {/* 2. The Line and Dots (SVG) */}
-          <svg
-            className="line-svg"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            {/* Connecting Line */}
-            <polyline
-              className="line-path"
-              points="5,60 23,30 41,50 59,10 77,45 95,35"
+                {/* 2. The Line and Dots (SVG) */}
+                <svg
+                  className="line-svg"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                >
+                  {/* Connecting Line */}
+                  <polyline
+                    className="line-path"
+                    points="5,60 23,30 41,50 59,10 77,45 95,35"
+                  />
+
+                  {/* Data Dots */}
+                  <circle className=" dot" cx="5" cy="60" r="4" />
+                  <circle className=" dot" cx="23" cy="30" r="4" />
+                  <circle className=" dot" cx="41" cy="50" r="4" />
+                  <circle className=" dot" cx="59" cy="10" r="4" />
+                  <circle className=" dot" cx="77" cy="45" r="4" />
+                  <circle className=" dot" cx="95" cy="35" r="4" />
+                </svg>
+              </div>
+            </div>
+            {/* The empty panels layer */}
+            <div className="w-[350px] h-[400px]">
+              <img
+                src={bgImage}
+                alt="Workspace Background"
+                className="relative  bg-layer"
+              />
+
+              <div className=" sda-small-gear sda-gear-top-right">
+                <GearSVG size={42} color="#b9b9b9ff" />
+              </div>
+
+              {/* Bottom-left gear */}
+              <div className="mb-[450px] sda-small-gear sda-gear-bottom-left">
+                <GearSVG size={42} color="#cfcfd0ff" />
+              </div>
+              <div className="mb-[400px] sda-small-gear sda-gear-bottom-left">
+                <GearSVG size={42} color="#cfcfd0ff" />
+              </div>
+              <div className="mb-[435px] ml-10  sda-small-gear sda-gear-bottom-left">
+                <GearSVG size={46} color="#cfcfd0ff" />
+              </div>
+              <div className="mb-[389px] ml-40  sda-small-gear sda-gear-bottom-left">
+                <GearSVG size={46} color="#cfcfd0ff" />
+              </div>
+
+              {/* Bottom-right gear */}
+              <div className="mb-[420px] sda-small-gear sda-gear-bottom-right">
+                <GearSVG size={48} color="#cfceceff" />
+              </div>
+            </div>
+
+            {/* The characters and cycle arrow layer */}
+            <img
+              src={manImage}
+              alt="Developers at work"
+              className="relative character-layer"
             />
-
-            {/* Data Dots */}
-            <circle className=" dot" cx="5" cy="60" r="4" />
-            <circle className=" dot" cx="23" cy="30" r="4" />
-            <circle className=" dot" cx="41" cy="50" r="4" />
-            <circle className=" dot" cx="59" cy="10" r="4" />
-            <circle className=" dot" cx="77" cy="45" r="4" />
-            <circle className=" dot" cx="95" cy="35" r="4" />
-          </svg>
+          </section>
         </div>
       </div>
-      {/* The empty panels layer */}
-      <div className="lg:w-[350px] lg:h-[400px]">
-        <img
-          src={bgImage}
-          alt="Workspace Background"
-          className="relative  bg-layer"
-        />
-
-        <div className=" sda-small-gear sda-gear-top-right">
-          <GearSVG size={42} color="#b9b9b9ff" />
-        </div>
-
-        {/* Bottom-left gear */}
-        <div className="mb-[450px] sda-small-gear sda-gear-bottom-left">
-          <GearSVG size={42} color="#cfcfd0ff" />
-        </div>
-        <div className="mb-[400px] sda-small-gear sda-gear-bottom-left">
-          <GearSVG size={42} color="#cfcfd0ff" />
-        </div>
-        <div className="mb-[435px] ml-10  sda-small-gear sda-gear-bottom-left">
-          <GearSVG size={46} color="#cfcfd0ff" />
-        </div>
-        <div className="mb-[389px] ml-40  sda-small-gear sda-gear-bottom-left">
-          <GearSVG size={46} color="#cfcfd0ff" />
-        </div>
-
-        {/* Bottom-right gear */}
-        <div className="mb-[420px] sda-small-gear sda-gear-bottom-right">
-          <GearSVG size={48} color="#cfceceff" />
-        </div>
-      </div>
-
-      {/* The characters and cycle arrow layer */}
-      <img
-        src={manImage}
-        alt="Developers at work"
-        className="relative character-layer"
-      />
-    </section>
+    </div>
   );
 };
 
