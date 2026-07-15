@@ -16,7 +16,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,7 +31,7 @@ function App() {
         <Route path='/our-team' element={<OurTeam />} />
         <Route path="/about-us" element={<About />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
