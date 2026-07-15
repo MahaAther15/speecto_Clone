@@ -16,7 +16,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router basename="/speecto_Clone">
+    <Router basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
