@@ -576,6 +576,65 @@
   animation: ups-down 3s ease-in-out infinite;
 }
 
+/* Custom Cloud Float Cycle: One Single Continuous Slide Up (-30px & Dark) -> One Single Continuous Slide Down (0px & Light) -> ~0.5s Soft Pause */
+@keyframes cloud-float-cycle {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+    filter: brightness(1);
+  }
+  50% {
+    transform: translateY(-30px);
+    opacity: 1;
+    filter: brightness(0.35);
+  }
+  88% {
+    transform: translateY(0px);
+    opacity: 0;
+    filter: brightness(1);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0;
+    filter: brightness(1);
+  }
+}
+
+.animate-cloud-float-cycle {
+  animation: cloud-float-cycle 4.5s ease-in-out infinite;
+}
+
+.animate-cloud-float-cycle-delay {
+  animation: cloud-float-cycle 4.5s ease-in-out infinite;
+}
+
+@keyframes cloud-float-opposite {
+  0% {
+    transform: translateY(-30px);
+    opacity: 1;
+    filter: brightness(0.35);
+  }
+  44% {
+    transform: translateY(0px);
+    opacity: 0;
+    filter: brightness(1);
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 0;
+    filter: brightness(1);
+  }
+  100% {
+    transform: translateY(-30px);
+    opacity: 1;
+    filter: brightness(0.35);
+  }
+}
+
+.animate-cloud-float-opposite {
+  animation: cloud-float-opposite 4.5s ease-in-out infinite;
+}
+
 /* spin (clockwise) */
 @keyframes spin-cw {
   from {
@@ -591,6 +650,20 @@
   transform-origin: center center;
   display: block;
   animation: spin-cw 8s linear infinite;
+}
+
+/* Marching Ants (Revolving Dashed Selection Box Border) */
+@keyframes marching-ants {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -24;
+  }
+}
+
+.animate-marching-ants {
+  animation: marching-ants 1.2s linear infinite;
 }
 
 /* spin-back (counter-clockwise) */
@@ -1143,7 +1216,7 @@
    ============================================= */
 .team-card-overlay {
   clip-path: polygon(0px 80%, 100% 59%, 100% 100%, 0% 100%);
-  transition: all 0.5s ease-in-out;
+  transition: clip-path 0.5s ease-in-out, background-image 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .group:hover .team-card-overlay {

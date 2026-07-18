@@ -32,10 +32,12 @@ const Requirement = () => {
         </a>
       </div>
 
-      <div className="grid md:grid-cols-[39%_60%] lg:grid-cols-[46.29%_50.61%] gap-8 sm:gap-10 md:gap-[3.4%] lg:gap-[45px] w-full max-w-full overflow-hidden lg:overflow-visible">
+      <div className="grid md:grid-cols-[39%_60%] lg:grid-cols-[46.29%_50.61%] gap-8 sm:gap-10 md:gap-[3.4%] lg:gap-[45px] items-start w-full max-w-full overflow-hidden lg:overflow-visible">
         {/* Left side: Animated Vectors / Graphical representation */}
-        <div className="relative flex items-start justify-center order-1 h-full pt-2 pb-4 md:pb-0 md:pt-[20%] lg:order-1 w-full overflow-hidden lg:overflow-visible">
-          <RequirmentAnimation />
+        <div className="order-1 relative flex h-full items-center justify-center pt-[60px] mt-[80px] sm:mt-[40px] md:mt-0 w-full lg:overflow-visible productDesignIllustrationWrapper">
+          <div className="lg:mt-0 md:mt-[-85%] md:top-[78%] lg:top-[90%] sticky sm:max-w-none max-w-[448px] w-[99%] lg:w-[96%] mx-auto md:ml-0 md:mr-auto">
+            <RequirmentAnimation />
+          </div>
         </div>
 
         {/* Right side: Steps Timeline */}

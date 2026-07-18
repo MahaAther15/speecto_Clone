@@ -1,17 +1,11 @@
 import React from "react";
 import "./SystemDesign.css";
 
-import systemDesignLightBg from "../../../assets/asset/systemDesignLightBg (1).webp";
-import systemDesignLightMan from "../../../assets/asset/systemDesignLightMan.webp";
-import systemDesignLine1 from "../../../assets/asset/systemDesignLine1.webp";
-import systemDesignLine2 from "../../../assets/asset/systemDesignLine2.webp";
-import systemDesignMessage from "../../../assets/asset/systemDesignMessage.webp";
-
 import product from "../../../assets/asset/product.svg";
 import roadmap from "../../../assets/asset/roadmap.svg";
 import wireframe from "../../../assets/asset/wireframe.svg";
 import design from "../../../assets/asset/design.svg";
-import SystemDesignAnimation from "./SystemDesignAnimation";
+import systemDesignVideo from "../../../assets/asset/systemdesign.mp4";
 
 const SystemDesign = () => {
   return (
@@ -35,9 +29,16 @@ const SystemDesign = () => {
       <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-0 max-w-6xl w-full max-w-full items-center lg:items-start relative overflow-hidden lg:overflow-visible">
         {/* LEFT COLUMN */}
         <div className="w-full max-w-[360px] sm:max-w-[460px] lg:max-w-none lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-12 self-start flex items-start justify-center pb-6 sm:pb-8 lg:pb-0 lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full h-[280px] sm:h-[380px] lg:w-[550px] lg:-ml-8 lg:h-[600px] mx-auto overflow-hidden lg:overflow-visible flex items-center justify-center font-sans">
+          <div className="relative w-full h-[280px] sm:h-[380px] lg:w-[550px] lg:h-[600px] mx-auto translate-x-[8px] overflow-hidden lg:overflow-visible flex items-center justify-center font-sans">
             <div className="w-full h-full flex items-center justify-center">
-              <SystemDesignAnimation />
+              <video
+                src={systemDesignVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full ml-18 h-auto object-contain"
+              />
             </div>
           </div>
         </div>

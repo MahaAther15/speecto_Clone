@@ -1,9 +1,9 @@
 import React from "react";
-import DevelopmentAnimation from "./DevelopmentAnimation.jsx";
 
-// Import local icons and images
+// Import local icons, images, and videos
 import scrumIcon from "../../../assets/asset/scrum.svg";
 import codeIcon from "../../../assets/asset/code.svg";
+import developmentVideo from "../../../assets/asset/development.mp4";
 
 const Development = () => {
     return (
@@ -92,8 +92,15 @@ const Development = () => {
 
                 {/* RIGHT COLUMN: Illustration / Animation */}
                 <div className="md:order-2 order-1 relative flex w-full h-full items-start mt-4 mb-4 sm:mt-8 sm:mb-8 md:mt-0 md:mb-0 md:pt-[20%] lg:pt-[15%]">
-                    <div className="sticky md:top-[20%] lg:top-[25%] xl:top-[calc(50%-130px)] 2xl:top-[calc(50%-100px)] w-full flex justify-center items-center">
-                        <DevelopmentAnimation />
+                    <div className="sticky md:top-[20%] lg:top-[25%] xl:top-[calc(50%-130px)] 2xl:top-[calc(50%-100px)] w-[80%] ml-12 flex justify-center items-center">
+                        <video
+                            src={developmentVideo}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-auto object-contain"
+                        />
                     </div>
                 </div>
             </div>

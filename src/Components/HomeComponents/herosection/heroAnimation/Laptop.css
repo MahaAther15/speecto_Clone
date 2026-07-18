@@ -326,16 +326,28 @@
 
 .imgLidText {
     position: absolute;
-    width: 60%;
+    width: 57%;
     height: 66%;
     top: -47%;
-    left: 73.5%;
+    left: 74.5%;
     z-index: 10;
-    transform: translate(-56%, 25%);
+    transform: translate(-55%, 25%);
     filter: drop-shadow(0 0 10px rgba(255, 69, 58, 0.6));
     /* wait 4 sec to come */
-    animation: fadeIn 1s ease forwards;
+    animation: fadeInText 1s ease forwards;
     animation-delay: 2.5s;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translate(-55%, 35%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-55%, 25%);
+    }
 }
 
 .imgLidLine {
@@ -450,4 +462,74 @@
 .shadow {
     opacity: 0.3;
     animation: shadow-grow 3s ease-out forwards;
+}
+
+/* New animations for circle layout */
+@keyframes waving-hand {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.animate-waving-hand {
+    animation: waving-hand 20s linear infinite;
+}
+
+@keyframes waving-hand2 {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+.animate-waving-hand2 {
+    animation: waving-hand2 4s ease-in-out infinite;
+}
+
+@keyframes waving-hand5 {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+.animate-waving-hand5 {
+    animation: waving-hand5 5s ease-in-out infinite alternate;
+}
+
+@keyframes manAnimation {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+.manAnimation {
+    animation: manAnimation 3.5s ease-in-out infinite;
+}
+
+/* To ensure counter-rotation for inner icons if needed */
+.animate-waving-hand > div > img {
+    animation: counter-waving-hand 20s linear infinite;
+}
+
+@keyframes counter-waving-hand {
+    from {
+        transform: rotate(90deg); /* Or initial rotation */
+    }
+    to {
+        transform: rotate(-270deg); /* 90 - 360 */
+    }
+}
+
+.hover\:pause:hover {
+    animation-play-state: paused;
+}
+.hover\:pause:hover > div > img {
+    animation-play-state: paused;
 }

@@ -62,11 +62,11 @@ const CONTENT_VARIATIONS = [
 ];
 
 const ANIM_COMPONENTS = [
-    { component: LaptopAnimation, name: "laptop" },
-    { component: MobileAnimation, name: "mobile" },
-    { component: StandingAnimation, name: "standing" },
-    { component: LaptopmanAnimation, name: "laptopman" },
-    { component: OrbitAnimation, name: "orbit" },
+    { component: LaptopAnimation,  name: "laptop",    yOffset: 0   },
+    { component: MobileAnimation,  name: "mobile",    yOffset: -10 },
+    { component: StandingAnimation,name: "standing",  yOffset: 10  },
+    { component: LaptopmanAnimation,name:"laptopman", yOffset: 0   },
+    { component: OrbitAnimation,   name: "orbit",     yOffset: -16 },
 ];
 
 function Hero() {
@@ -138,6 +138,7 @@ function Hero() {
     const slideDuration = ((currentContent.typewriterText.length * 200) + holdTime + 1500) / 1000;
 
     const ActiveComponent = ANIM_COMPONENTS[currentAnimIndex].component;
+    const activeYOffset   = ANIM_COMPONENTS[currentAnimIndex].yOffset;
 
     return (
         <div className="w-full bg-lightBg dark:bg-darkBg relative overflow-hidden text-white">
@@ -158,88 +159,57 @@ function Hero() {
                 {/* Grid layout matching original speecto.com structure */}
                 <div className="relative items-center justify-center gap-y-0 grid grid-cols-1 2xl:grid-cols-[60%_35%] md:grid-cols-[55%_40%] gap-x-[1%] sm:gap-x-[5.27%] h-max pt-2 pb-3 sm:pb-0 min-h-[calc(100vh-80px)] 2xl:max-h-screen 2xl:min-h-[calc(100vh-80px)]">
 
-                    {/* Row 1: Heading */}
-                    <div className="md:col-start-1 row-start-1 self-end">
-                        <h1 className="2xl:text-4xl lg:text-3xl sm:text-2xl text-lg text-primary font-bold font-Nunito md:!text-left !font-Lemon !font-normal !text-center !text-white1 2xl:!text-5xl lg:!text-4xl sm:!text-3xl uppercase">
-                            <div>
-                                {currentContent.prefix}
-                                <span className={`!text-transparent !bg-clip-text ${currentContent.gradientClass}`}>
-                                    {currentContent.highlight}
-                                </span>
-                                {currentContent.suffix}
-                            </div>
-                            <div className={`uppercase md:block hidden !text-transparent !bg-clip-text mb-[10px] ${currentContent.gradientClass}`}>
-                                <div className="react-reveal" style={{ opacity: 1 }}>
-                                    <div className="Typewriter" data-testid="typewriter-wrapper">
-                                        <span className="Typewriter__wrapper">{typedText}</span>
-                                        <span className="Typewriter__cursor">|</span>
-                                    </div>
-                                </div>
-                            </div>
+                    {/* Row 1: Heading and Description */}
+                    <div className="md:col-start-1 row-start-1 md:text-left text-center self-center">
+                        <h1 className="2xl:text-5xl lg:text-4xl font-Nunito md:text-3xl text-2xl text-primary font-bold !text-white flex items-center justify-center md:justify-start uppercase">
+                            Our <span className="!text-transparent bg-buttontextGradient bg-clip-text ml-2">Services</span> 
                         </h1>
+                        <p className="font-Nunito 2xl:text-xl xl:text-lg text-base font-medium text-white mt-3 md:mt-5">
+                            we offer a comprehensive range of IT solutions to meet your business needs. From Requirement Engineering, development and Product design to cloud computing and Testing, our experienced team is here to provide expert guidance and deliver innovative solutions.
+                        </p>
                     </div>
 
-                    {/* Row 2 (mobile row 3): Description + Buttons */}
-                    <div className="md:col-start-1 row-start-3 md:row-start-2 flex flex-col md:items-start items-center self-start">
-                        <p className="font-Nunito 2xl:text-xl xl:text-lg text-base font-medium md:!text-left !text-center !font-bold text-gray2 2xl:mb-[50px] mb-5 md:mb-10 line-clamp-3 md:line-clamp-none">
-                            We are a team of tech enthusiasts dedicated to developing world-class
-                            custom software solutions while fostering a culture of creativity,
-                            inclusivity, and continuous learning.
-                        </p>
-
-                        <div className="flex mb-5 w-full flex-col items-center gap-8 md:flex-row">
-                            <button
-                                name="button"
-                                onMouseEnter={() => setIsButtonHovered(true)}
-                                onMouseLeave={() => setIsButtonHovered(false)}
-                                className="relative group w-full h-full py-[11px] overflow-hidden px-[25px] gap-x-[18px] p-[1.5px] font-bold !rounded-[10px] relative w-full capitalize sm:w-[70%] md:w-max cursor-pointer"
-                                style={{
-                                    boxShadow: `${currentContent.glowColor} 0px 0px 50px 0px`,
-                                    backgroundImage: isButtonHovered
-                                        ? currentContent.gradientBg
-                                        : `linear-gradient(#081533, #081533), ${currentContent.gradientBg}`,
-                                    backgroundOrigin: "border-box",
-                                    backgroundClip: "padding-box, border-box",
-                                    border: "1.5px solid transparent",
-                                }}
-                            >
-                                <p
-                                    className="text-base z-[2] relative md:text-lg 2xl:text-xl transition-all duration-300"
-                                    style={{
-                                        backgroundImage: isButtonHovered ? "none" : currentContent.gradientBg,
-                                        WebkitBackgroundClip: isButtonHovered ? "unset" : "text",
-                                        WebkitTextFillColor: isButtonHovered ? "white" : "transparent",
-                                    }}
-                                >
-                                    Get Started
-                                </p>
+                    {/* Row 2 (mobile row 3): Contact Button */}
+                    <div className="md:col-start-1 md:row-start-2 row-start-3 w-full mt-5 md:mt-0">
+                        <a href="/contact">
+                            <button className="relative overflow-hidden group rounded-xl sm:text-base text-sm lg:text-lg 2xl:text-xl font-bold w-max h-max mx-auto md:mx-0 p-[2px] bg-buttontextGradient md:min-w-0 min-w-full">
+                                <div className="rounded-[10px] w-full flex items-center justify-center bg-lightBg dark:bg-darkBg !text-xl capitalize !font-bold shadow-buttonShadow">
+                                    <div className="flex z-[3] relative !text-transparent group-hover:!text-white group-hover:!bg-white !bg-clip-text bg-buttontextGradient py-2 sm:py-[11px] px-5 sm:px-[25px]">
+                                        Contact Us
+                                    </div>
+                                </div>
+                                <div className="absolute z-[1] left-0 top-0 content-[' '] h-full bg-darkBg transition-all duration-300 bg-buttontextGradient group-hover:w-full w-0"></div>
                             </button>
-                            <button
-                                className="cursor-pointer min-w-max py-[14px] px-5 lg:text-lg md:text-base text-sm 2xl:text-xl font-bold text-white rounded-[10px] relative group flex items-center bg-transparent text-white gap-x-[18px] font-Nunito font-bold 2xl:text-lg text-base"
-                                name="button"
-                            >
-                                Learn more
-                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="transition-transform duration-300 group-hover:translate-x-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                </svg>
-                            </button>
-                        </div>
+                        </a>
                     </div>
 
                     {/* Right Column: Animation spanning rows 1-2 */}
                     <div className="md:row-start-1 row-start-2 md:col-start-2 md:row-span-2 flex items-center order-1 w-full sm:h-full md:order-2 sm:mt-0">
-                        <div className="max-w-[717px] h-[300px] md:h-[500px] z-[10] w-full flex items-center sm:pt-0">
+                        <div
+                            className="max-w-[717px] h-[300px] md:h-[500px] z-[10] w-full"
+                            style={{ position: "relative" }}
+                        >
                             <div
-                                className="flex items-center justify-center w-full h-full origin-center"
                                 style={{
-                                    transform: isAnimVisible ? "scale(1)" : "scale(0)",
+                                    position: "absolute",
+                                    top: "50%",
+                                    left: "50%",
+                                    transform: isAnimVisible
+                                        ? "translate(-50%, -50%) scale(1)"
+                                        : "translate(-50%, -50%) scale(0)",
                                     opacity: isAnimVisible ? 1 : 0,
                                     transition: isAnimVisible
                                         ? "transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.7s ease-out"
                                         : "transform 0.6s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.6s ease-in",
+                                    transformOrigin: "center center",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
                                 }}
                             >
-                                <ActiveComponent />
+                                <div style={{ transform: `translateY(${activeYOffset}px)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                    <ActiveComponent />
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -18,7 +18,7 @@ const Hero = () => {
                             autoPlay
                             loop
                             muted
-                            className="w-full h-auto object-contain"
+                            className="w-[90%] ml-12 mb-8 mr-2 mt-12 h-auto object-contain"
                         />
                     </div>
                 </div>

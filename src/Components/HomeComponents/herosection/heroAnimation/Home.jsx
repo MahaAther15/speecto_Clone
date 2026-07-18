@@ -104,7 +104,7 @@ const Home = () => {
       `}</style>
             <div className="relative w-[330px] h-[330px] flex items-center justify-center scale-[0.78] sm:scale-100 mx-auto origin-center">
                 {/* Center Image */}
-                <div className="absolute overflow-hidden flex justify-center items-center p-5 rounded-full w-[80%] sm:w-[67%] h-[80%] sm:h-[67%] m-auto inset-0">
+                <div className="absolute flex justify-center items-center rounded-full w-[80%] sm:w-[67%] h-[80%] sm:h-[67%] m-auto inset-0">
                     <CenterDisplay activeComponent={activeComponent} />
                 </div>
 
@@ -112,7 +112,7 @@ const Home = () => {
                 <div className="absolute w-full h-full pointer-events-none">
                     <div
                         className={`pointer-events-none rounded-full w-full h-full z-[199] absolute flex items-center inset-0 m-auto justify-center animate-waving-hand ${
-                            hoveredName ? "spin-paused" : ""
+                            (hoveredName || selectedName) ? "spin-paused" : ""
                         }`}
                     >
                         {nodes
@@ -133,7 +133,7 @@ const Home = () => {
                                     >
                                         <div
                                             className={`animate-waving-hand-reverse ${
-                                                hoveredName ? "spin-paused" : ""
+                                                (hoveredName || selectedName) ? "spin-paused" : ""
                                             }`}
                                         >
                                             <div
@@ -143,7 +143,7 @@ const Home = () => {
                                                 className="flex items-center justify-center w-[50px] h-[50px]"
                                             >
                                                 <div
-                                                    className={`pointer-events-auto bg-[#0f0563] cursor-pointer rounded-full border-2 overflow-hidden flex hover:border-transparent transition-all duration-150 ease-in z-[999] justify-center items-center lg:w-[48px] lg:h-[48px] w-[34px] h-[34px] hover:w-[14%] hover:h-[14%] scale-100 hover:scale-125 ${
+                                                    className={`pointer-events-auto bg-[#0f0563] cursor-pointer rounded-full border-2 overflow-hidden flex hover:border-transparent transition-all duration-150 ease-in z-[999] justify-center items-center lg:w-[48px] lg:h-[48px] w-[34px] h-[34px] scale-100 hover:scale-125 ${
                                                         selectedName === node.name
                                                             ? "border-[#fc5b3f] shadow-[0_0_10px_rgba(252,91,63,0.8)] scale-110"
                                                             : "border-white"
@@ -181,12 +181,12 @@ const Home = () => {
                     ))}
                 </div>
 
-                {/* 16 Blue Empty Circles */}
+                {/* 16 Red/Orange Empty Circles */}
                 <div className="flex z-[100] items-center w-full h-full absolute inset-0 m-auto justify-center pointer-events-none">
                     {Array.from({ length: 16 }, (_, i) => i * 22.5).map((angle, idx) => (
                         <div
                             key={idx}
-                            className="absolute border bg-[#0f0563] border-primary1 rounded-full flex justify-center items-center"
+                            className="absolute border bg-transparent border-[#eb4215] rounded-full flex justify-center items-center"
                             style={{
                                 transform: `rotate(${angle}deg) translate(132px)`,
                                 width: "2.68293%",
@@ -196,18 +196,20 @@ const Home = () => {
                     ))}
                 </div>
 
-                {/* 32 Tiny White Dots */}
+                {/* 16 Tiny White Dots (filtered to not overlap with red circles) */}
                 <div className="z-[50] flex justify-center items-center w-full h-full absolute inset-0 m-auto rounded-full pointer-events-none">
-                    {Array.from({ length: 32 }, (_, i) => i * 11.25).map((angle, idx) => (
-                        <div
-                            key={idx}
-                            className="absolute bg-white rounded-full flex justify-center items-center"
-                            style={{
-                                transform: `rotate(${angle}deg) translate(132px)`,
-                                width: "1.01538%",
-                                height: "1.01538%",
-                            }}
-                        ></div>
+                    {Array.from({ length: 32 }, (_, i) => i * 11.25)
+                        .filter((_, idx) => idx % 2 !== 0)
+                        .map((angle, idx) => (
+                            <div
+                                key={`tiny-white-${idx}`}
+                                className="absolute bg-white rounded-full flex justify-center items-center"
+                                style={{
+                                    transform: `rotate(${angle}deg) translate(132px)`,
+                                    width: "1.01538%",
+                                    height: "1.01538%",
+                                }}
+                            ></div>
                     ))}
                 </div>
             </div>

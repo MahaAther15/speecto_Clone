@@ -153,12 +153,14 @@ const InfoCard = () => {
               </span>
             </div>
 
-            {/* Speecto.com exact single overlay structure with clean blue hover bg and user's text styles */}
-            <div className="team-card-overlay absolute p-5 flex group-hover:items-center items-end justify-center text-center group-hover:text-left transition-all duration-500 bottom-0 w-full group-hover:min-h-full min-h-[300px] bg-black/80 z-10 overflow-hidden">
-              <div className="max-h-max ">
-                <h3 className=" font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium text-white !font-bold">{member.name}</h3>
-                <h3 className=" font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium !bg-clip-text !font-bold !text-base !mb-1 group-hover:!text-white !text-transparent " style={{ background: member.roleGradient }}>{member.role}</h3>
-                <p title={member.bio} className="text-white font-Nunito text-sm sm:text-base mt-0 h-0 opacity-0 group-hover:h-[280px] group-hover:opacity-100 group-hover:mt-2 overflow-hidden transition-all duration-500 ease-in-out group-hover:delay-200">{member.bio}</p>
+            {/* Overlay: clip-path diagonal → full card on hover, blue gradient bg */}
+            <div
+              className="team-card-overlay absolute p-5 flex group-hover:items-center items-end justify-center text-center group-hover:text-left transition-all group-hover:bg-buttontextGradient group-hover:opacity-80 duration-500 bottom-0 w-full group-hover:min-h-full min-h-[300px] bg-black/80 content-[' '] overflow-auto"
+            >
+              <div className="max-h-max">
+                <h3 className="font-Nunito 2xl:text-2xl lg:text-xl text-lg font-medium text-white !font-bold">{member.name}</h3>
+                <h3 className="font-Nunito 2xl:text-2xl lg:text-xl text-lg font-medium !bg-clip-text !font-bold !text-base !mb-1 group-hover:!text-white !text-transparent" style={{ background: member.roleGradient }}>{member.role}</h3>
+                <p title={member.bio} className="text-white font-Nunito text-sm sm:text-base mt-0 max-h-0 opacity-0 group-hover:max-h-[280px] group-hover:opacity-100 group-hover:mt-2 overflow-hidden transition-all duration-500 ease-in-out">{member.bio}</p>
               </div>
             </div>
           </div>
@@ -167,5 +169,4 @@ const InfoCard = () => {
     </div>
   );
 };
-
 export default InfoCard; // Exporting InfoCard component
