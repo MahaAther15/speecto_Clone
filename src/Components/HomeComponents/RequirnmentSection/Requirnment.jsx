@@ -43,7 +43,7 @@ const Requirement = () => {
               loop
               muted
               playsInline
-              className="w-full h-auto"
+              className="w-[90%] ml-17 h-auto"
             ></video>
           </div>
         </div>
