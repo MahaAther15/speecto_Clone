@@ -228,7 +228,7 @@ function Hero() {
 
                     {/* Right Column: Animation spanning rows 1-2 */}
                     <div className="md:row-start-1 row-start-2 md:col-start-2 md:row-span-2 flex items-center order-1 w-full sm:h-full md:order-2 sm:mt-0">
-                        <div className="max-w-[717px] h-[300px] md:h-[500px] z-[10] w-full flex items-center sm:pt-0">
+                        <div className="max-w-[717px] h-[300px] md:h-[500px] z-[10] w-full flex items-center sm:pt-0 relative -top-[6px]">
                             <div
                                 className="flex items-center justify-center w-full h-full origin-center"
                                 style={{

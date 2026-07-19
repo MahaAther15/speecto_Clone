@@ -10,6 +10,7 @@ import man1LightVector from "../../../assets/asset/man1LightVector.webp";
 import plantVectorLight from "../../../assets/asset/plantVectorLight.webp";
 import fman2LightVector from "../../../assets/asset/fman2LightVector.webp";
 import windowVectorLight from "../../../assets/asset/windowVectorLight.webp";
+import reqVideo from "../../../assets/asset/req.mp4";
 
 // Import icons
 import meetIcon from "../../../assets/asset/meet.svg";
@@ -34,9 +35,16 @@ const Requirement = () => {
 
       <div className="grid md:grid-cols-[39%_60%] lg:grid-cols-[46.29%_50.61%] gap-8 sm:gap-10 md:gap-[3.4%] lg:gap-[45px] items-start w-full max-w-full overflow-hidden lg:overflow-visible">
         {/* Left side: Animated Vectors / Graphical representation */}
-        <div className="order-1 relative flex h-full items-center justify-center pt-[60px] mt-[80px] sm:mt-[40px] md:mt-0 w-full lg:overflow-visible productDesignIllustrationWrapper">
-          <div className="lg:mt-0 md:mt-[-85%] md:top-[78%] lg:top-[90%] sticky sm:max-w-none max-w-[448px] w-[99%] lg:w-[96%] mx-auto md:ml-0 md:mr-auto">
-            <RequirmentAnimation />
+        <div className="md:order-1 order-1 relative flex w-full h-full items-start pt-14 md:pt-[20%] lg:pt-[15%] testingContainer systemDesignIllustrationOuterContainer">
+          <div className="sticky md:top-[20%] lg:top-[25%] xl:top-[calc(50%-130px)] 2xl:top-[calc(50%-100px)] w-full flex justify-center items-center">
+            <video
+              src={reqVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto"
+            ></video>
           </div>
         </div>
 
