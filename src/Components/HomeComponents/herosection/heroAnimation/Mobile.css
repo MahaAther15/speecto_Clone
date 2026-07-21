@@ -1,9 +1,8 @@
 .mobile-wrapper {
     perspective: 500px;
-    height: 400px;
-    width: 360px;
+    height: 100%;
+    width: 100%;
     transform-origin: center center;
-    transform: translateY(-45px);
 }
 
 @keyframes seqScaleMobile {

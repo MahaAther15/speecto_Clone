@@ -6,13 +6,11 @@ const CenterDisplay = ({ activeComponent }) => {
         <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
             {activeComponent ? (
                 <div
-                    className="absolute w-full h-full flex items-center justify-center transition-all duration-300"
-                    style={{
-                        transform: "scale(0.45)", 
-                        transformOrigin: "center center",
-                    }}
+                    className="absolute w-full h-full flex items-center justify-center transition-all duration-300 scale-[0.40] sm:scale-[0.44] md:scale-[0.47] origin-center"
                 >
-                    {activeComponent}
+                    <div className="flex items-center justify-center [&>*]:!mt-0 [&>*]:!mb-0 [&>*]:!pt-0 translate-y-[25px] [&_.wrapper]:translate-y-[20px]">
+                        {activeComponent}
+                    </div>
                 </div>
             ) : (
                 <img
@@ -24,5 +22,4 @@ const CenterDisplay = ({ activeComponent }) => {
         </div>
     );
 };
-
 export default CenterDisplay;

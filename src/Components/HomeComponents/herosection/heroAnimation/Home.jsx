@@ -102,7 +102,7 @@ const Home = () => {
           animation-play-state: paused !important;
         }
       `}</style>
-            <div className="relative w-[330px] h-[330px] flex items-center justify-center scale-[0.78] sm:scale-100 mx-auto origin-center">
+            <div className="relative w-[330px] h-[330px] flex items-center justify-center scale-[0.80] sm:scale-[1.10] md:scale-[1.25] mx-auto origin-center">
                 {/* Center Image */}
                 <div className="absolute flex justify-center items-center rounded-full w-[80%] sm:w-[67%] h-[80%] sm:h-[67%] m-auto inset-0">
                     <CenterDisplay activeComponent={activeComponent} />
@@ -111,9 +111,8 @@ const Home = () => {
                 {/* 4 Revolving Icons */}
                 <div className="absolute w-full h-full pointer-events-none">
                     <div
-                        className={`pointer-events-none rounded-full w-full h-full z-[199] absolute flex items-center inset-0 m-auto justify-center animate-waving-hand ${
-                            (hoveredName || selectedName) ? "spin-paused" : ""
-                        }`}
+                        className={`pointer-events-none rounded-full w-full h-full z-[199] absolute flex items-center inset-0 m-auto justify-center animate-waving-hand ${(hoveredName || selectedName) ? "spin-paused" : ""
+                            }`}
                     >
                         {nodes
                             .filter((node) => node.type === "component")
@@ -132,9 +131,8 @@ const Home = () => {
                                         }}
                                     >
                                         <div
-                                            className={`animate-waving-hand-reverse ${
-                                                (hoveredName || selectedName) ? "spin-paused" : ""
-                                            }`}
+                                            className={`animate-waving-hand-reverse ${(hoveredName || selectedName) ? "spin-paused" : ""
+                                                }`}
                                         >
                                             <div
                                                 style={{
@@ -143,11 +141,10 @@ const Home = () => {
                                                 className="flex items-center justify-center w-[50px] h-[50px]"
                                             >
                                                 <div
-                                                    className={`pointer-events-auto bg-[#0f0563] cursor-pointer rounded-full border-2 overflow-hidden flex hover:border-transparent transition-all duration-150 ease-in z-[999] justify-center items-center lg:w-[48px] lg:h-[48px] w-[34px] h-[34px] scale-100 hover:scale-125 ${
-                                                        selectedName === node.name
-                                                            ? "border-[#fc5b3f] shadow-[0_0_10px_rgba(252,91,63,0.8)] scale-110"
-                                                            : "border-white"
-                                                    }`}
+                                                    className={`pointer-events-auto bg-[#0f0563] cursor-pointer rounded-full border-2 overflow-hidden flex hover:border-transparent transition-all duration-150 ease-in z-[999] justify-center items-center lg:w-[48px] lg:h-[48px] w-[34px] h-[34px] scale-100 hover:scale-125 ${selectedName === node.name
+                                                        ? "border-[#fc5b3f] shadow-[0_0_10px_rgba(252,91,63,0.8)] scale-110"
+                                                        : "border-white"
+                                                        }`}
                                                     onMouseEnter={() => setHoveredName(node.name)}
                                                     onMouseLeave={() => setHoveredName(null)}
                                                     onClick={() =>
@@ -210,7 +207,7 @@ const Home = () => {
                                     height: "1.01538%",
                                 }}
                             ></div>
-                    ))}
+                        ))}
                 </div>
             </div>
         </div>

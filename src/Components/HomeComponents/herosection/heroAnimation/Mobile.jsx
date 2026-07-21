@@ -4,7 +4,7 @@ import "./Mobile.css";
 
 const Mobile = () => {
     return (
-        <div className="mobile-wrapper relative w-full h-full flex items-center justify-center scale-[0.65] sm:scale-[0.85] md:scale-100 mx-auto my-auto origin-center">
+        <div className=" mobile-wrapper relative w-full h-full flex items-center justify-center scale-[0.75] sm:scale-[0.95] md:scale-[1.20] mx-auto my-auto origin-center">
             <div className="mobile-animation-container relative flex items-center justify-center w-[360px] h-[360px] m-auto">
                 {/* Floating Geometric Background Shapes */}
                 <div className="mobile-shapes-layer z-0 absolute inset-0 w-full h-full pointer-events-none">

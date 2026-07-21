@@ -1,6 +1,6 @@
 .wrapper {
-    height: 400px;
-    width: 360px;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     perspective: 1200px;
