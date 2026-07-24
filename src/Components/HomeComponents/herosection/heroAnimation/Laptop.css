@@ -469,67 +469,85 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
 }
+
 .animate-waving-hand {
     animation: waving-hand 20s linear infinite;
 }
 
 @keyframes waving-hand2 {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-8px);
     }
 }
+
 .animate-waving-hand2 {
     animation: waving-hand2 4s ease-in-out infinite;
 }
 
 @keyframes waving-hand5 {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(8px);
     }
 }
+
 .animate-waving-hand5 {
     animation: waving-hand5 5s ease-in-out infinite alternate;
 }
 
 @keyframes manAnimation {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-12px);
     }
 }
+
 .manAnimation {
     animation: manAnimation 3.5s ease-in-out infinite;
 }
 
 /* To ensure counter-rotation for inner icons if needed */
-.animate-waving-hand > div > img {
+.animate-waving-hand>div>img {
     animation: counter-waving-hand 20s linear infinite;
 }
 
 @keyframes counter-waving-hand {
     from {
-        transform: rotate(90deg); /* Or initial rotation */
+        transform: rotate(90deg);
+        /* Or initial rotation */
     }
+
     to {
-        transform: rotate(-270deg); /* 90 - 360 */
+        transform: rotate(-270deg);
+        /* 90 - 360 */
     }
 }
 
 .hover\:pause:hover {
     animation-play-state: paused;
 }
-.hover\:pause:hover > div > img {
+
+.hover\:pause:hover>div>img {
     animation-play-state: paused;
 }

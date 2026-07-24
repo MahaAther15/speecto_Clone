@@ -445,8 +445,243 @@
 .animate-search1 {
   animation: search1 5s ease-in-out infinite;
 }
+@keyframes wiggle44 {
+  0% { scale: 1; }
+  100% { scale: .9; }
+}
+
+@keyframes shadow {
+  0% { transform: translateY(95%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes filter {
+  0% { filter: invert(0) sepia(0) saturate(7500%) hue-rotate(75deg) brightness(0) contrast(109%); }
+  80% { filter: none; }
+}
+
+@keyframes filterkeybord {
+  0% { filter: invert(100%) sepia(200%) saturate(0) hue-rotate(0deg) brightness(100%) contrast(100%); }
+  80% { filter: none; }
+}
+
+@keyframes search2 {
+  0% { transform: translate(0); }
+  50% { transform: translate(-5px); }
+  75% { transform: translate(5px); }
+  100% { transform: translate(0); }
+}
+
+.animate-bounce1 { animation: bounce1 2s ease-in-out infinite alternate; }
+.animate-filter { animation: filter 3s linear 1s forwards; }
+.animate-filterkeybord { animation: filterkeybord 1s ease-in-out infinite alternate; }
+.animate-search2 { animation: search2 3s linear infinite; }
+.animate-shadow { animation: shadow 1s linear 0s infinite alternate; }
+.animate-skewAnimatioSmall { animation: skewAnimatioSmall 2s linear 1s forwards; }
+.animate-skewAnimatio { animation: skewAnimatio 2s linear 1s forwards; }
+.animate-skewAnimatioForBanner { animation: skewAnimatioForBanner 2s linear 1s forwards; }
+.animate-wiggle { animation: wiggle 2s ease-in-out infinite alternate; }
+.animate-wiggle2 { animation: wiggle2 2.5s linear 3s forwards; }
+.animate-wiggle21 { animation: wiggle21 .4s linear forwards; }
+.animate-wiggle22 { animation: wiggle22 .4s linear forwards; }
+.animate-wiggle23 { animation: wiggle23 .4s linear forwards; }
+.animate-wiggle24 { animation: wiggle24 .4s linear forwards; }
+.animate-wiggle25 { animation: wiggle25 .4s linear forwards; }
+.animate-wiggle3 { animation: wiggle3 2.5s linear 3 forwards; }
+.animate-wiggle33 { animation: wiggle33 2.5s linear 3s infinite alternate; }
+.animate-wiggle4 { animation: wiggle4 2.5s linear 4s infinite alternate; }
+.animate-wiggle44 { animation: wiggle44 2.5s linear 3s infinite alternate; }
+
+/* Fade In wrapper for active hero animations */
+.animate-hero-fade-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-animation-container {
+  opacity: 0;
+  animation: orbitActiveAnimation var(--slide-duration, 4s) cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes orbitActiveAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  15% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.buttonBorderGradient:before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* =============================================
+   Contact Us Animation Styles & Clock Keyframes
+   ============================================= */
+.clock {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hours-container,
+.minutes-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hours {
+  position: absolute;
+  width: 6%;
+  height: 25%;
+  left: 47%;
+  top: 25%;
+  transform-origin: 50% 100%;
+  animation: rotateClock 43200s linear infinite;
+  border-radius: 4px;
+}
+
+.minutes {
+  position: absolute;
+  width: 4%;
+  height: 35%;
+  left: 48%;
+  top: 15%;
+  transform-origin: 50% 100%;
+  animation: rotateClock 3600s linear infinite;
+  border-radius: 4px;
+}
+
+.seconds {
+  position: absolute;
+  width: 2%;
+  height: 40%;
+  left: 49%;
+  top: 10%;
+  transform-origin: 50% 100%;
+  animation: rotateClock 60s linear infinite;
+  border-radius: 4px;
+}
+
+@keyframes rotateClock {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blurScreen1 {
+  0% {
+    filter: blur(0px);
+  }
+  50% {
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes search1 {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(12px, -8px) rotate(2deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+@keyframes width-full2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-blurScreen1 {
+  animation: blurScreen1 6s ease-in-out infinite;
+}
+
+.animate-search1 {
+  animation: search1 5s ease-in-out infinite;
+}
 
 .animate-width-full2 {
   animation: width-full2 2.5s ease-in-out infinite;
 }
 
+@keyframes gear-float-spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+.animate-gear-float-spin {
+  animation: gear-float-spin 3s linear infinite;
+}
+
+.animate-gear-float-spin-back {
+  animation: gear-float-spin 3s linear infinite reverse;
+}
+
+@keyframes card-float-fade {
+  0% {
+    transform: translateY(10px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0.2;
+  }
+}
+
+.animate-card-float-fade {
+  animation: card-float-fade 3s linear infinite;
+}

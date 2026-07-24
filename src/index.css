@@ -738,6 +738,14 @@
   background-image: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
 
+@utility bg-systemDesignIllustrationGrad {
+  background: linear-gradient(90deg, #7952ab, #964df5);
+}
+
+.bg-systemDesignIllustrationGrad {
+  background: linear-gradient(90deg, #7952ab, #964df5);
+}
+
 /* Filled purple circle dot for System Design timeline */
 .systemDesignCircle {
   background: #3f2b96;
